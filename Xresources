@@ -1,0 +1,93 @@
+!
+! Xft settings
+!
+
+Xft.dpi:                  96
+Xft.antialias:            true
+Xft.rgba:                 rgb
+Xft.hinting:              full
+Xft.hintstyle:            hintslight
+
+!
+! URxvt settings
+!
+
+URxvt.loginShell:       true
+URxvt.perl-lib:         /usr/lib/urxvt/perl/
+URxvt.perl-ext-common:  default,matcher
+URxvt.matcher.button:   1
+URxvt.urlLauncher:      /usr/bin/chromium
+
+! Appearance
+URxvt*font:             xft:Dejavu Sans Mono:pixelsize=14
+URxvt*boldFont:         xft:Dejavu Sans Mono:bold:pixelsize=14
+URxvt.depth:            32
+URxvt.transparent:      false
+URxvt.fading:           0
+URxvt*xftAntialias: true
+URxvt.scrollBar:        false
+!URxvt.scrollStyle:      rxvt
+
+! Zenburn
+URxvt*background: #3f3f3f
+URxvt*foreground: #dcdccc
+URxvt*cursorColor: #aaaaaa
+URxvt*colorUL: #366060
+URxvt*underlineColor: #dfaf8f
+URxvt*color0: #3f3f3f
+URxvt*color1: #cc9393
+URxvt*color2: #7f9f7f
+URxvt*color3: #d0bf8f
+URxvt*color4: #6ca0a3
+URxvt*color5: #dc8cc3
+URxvt*color6: #93e0e3
+URxvt*color7: #dcdccc
+URxvt*color8: #000000
+URxvt*color9: #dca3a3
+URxvt*color10: #bfebbf
+URxvt*color11: #f0dfaf
+URxvt*color12: #8cd0d3
+URxvt*color13: #dc8cc3
+URxvt*color14: #93e0e3
+URxvt*color15: #ffffff
+
+!
+! xterm settings
+!
+
+xterm*internalBorder:        0
+xterm*loginShell:         true
+xterm*scrollBar:         false
+xterm*cursorBlink:       false
+!xterm*geometry:         80x26
+xterm*saveLines:         65535
+xterm*dynamicColors:        on
+xterm*highlightSelection: true
+
+! Appearance
+xterm*utf8:            2
+xterm*eightBitInput:   true
+xterm*metaSendsEscape: true
+xterm*font:        -xos4-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-2
+xterm*boldFont:    -xos4-terminus-bold-*-*-*-12-*-*-*-*-*-iso8859-2
+xterm*cursorColor: #DCDCCC
+
+! Zenburn
+xterm*background:  #3f3f3f
+xterm*foreground:  #dcdccc
+xterm*color0: #3f3f3f
+xterm*color1: #cc9393
+xterm*color2: #7f9f7f
+xterm*color3: #d0bf8f
+xterm*color4: #6ca0a3
+xterm*color5: #dc8cc3
+xterm*color6: #93e0e3
+xterm*color7: #dcdccc
+xterm*color8: #000000
+xterm*color9: #dca3a3
+xterm*color10: #bfebbf
+xterm*color11: #f0dfaf
+xterm*color12: #8cd0d3
+xterm*color13: #dc8cc3
+xterm*color14: #93e0e3
+xterm*color15: #ffffff
