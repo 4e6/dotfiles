@@ -201,9 +201,7 @@ autoload -U zcalc
 export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium
-export PLAY_HOME='/opt/git-repos/play20'
-export PATH=$PATH:$PLAY_HOME
-export SBT_OPTS="-Xmx4G -XX:MaxPermSize=512m"
+export SBT_OPTS="-Xmx2G -XX:MaxPermSize=512m"
 
 #
 # Functions
