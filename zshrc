@@ -44,8 +44,8 @@ zstyle ':completion:*:functions' ignored-patterns '_*'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
 
 # Menu for autocomplete
-#zstyle ':completion:*' menu yes select
-zstyle ':completion:*' yes select
+zstyle ':completion:*' menu yes select
+#zstyle ':completion:*' yes select
 
 autoload -Uz compinit && compinit
 
