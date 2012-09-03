@@ -3,7 +3,7 @@
 (require 'scala-mode-auto)
 
 ;; load the ensime lisp code...
-(add-to-list 'load-path "/opt/emacs-modes/ensime_2.9.2-RC1-0.9.3.RC4/elisp/")
+(add-to-list 'load-path "/opt/emacs-modes/ensime_2.10.0-SNAPSHOT-0.9.7/elisp/")
 (require 'ensime)
 ;;
 ;; This step causes the ensime-mode to be started whenever
