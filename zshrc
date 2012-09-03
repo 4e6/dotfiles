@@ -201,7 +201,7 @@ autoload -U zcalc
 export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium
-export SBT_OPTS="-Xmx2G -XX:MaxPermSize=512m"
+export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M"
 
 #
 # Functions
@@ -214,7 +214,7 @@ mcd() { mkdir $1; cd $1 }
 #
 # Colored commands
 alias grep='grep --color=auto'
-#alias ls='ls -F --color=auto'
+alias ls='ls -F --color=auto'
 # Human-readable 'df' and 'du'
 alias df='df -h'
 alias du='du -h'
