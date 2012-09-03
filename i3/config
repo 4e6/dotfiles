@@ -90,7 +90,7 @@ bindsym $mod+a focus parent
 #bindcode $mod+d focus child
 
 # assign workspaces
-workspace 1 output VGA1
+workspace 10 output VGA1
 workspace 1 output DisplayPort-0
 
 # switch to workspace
