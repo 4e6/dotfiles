@@ -202,6 +202,7 @@ export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium
 export SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M"
+source ~/.ec2rc
 PATH=$PATH:~/.gem/ruby/1.9.1/bin
 
 #
