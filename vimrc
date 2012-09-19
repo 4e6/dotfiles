@@ -45,13 +45,12 @@ colorscheme zenburn
 
 " Allow backspacing over everything in insert mode.
 set backspace=indent,eol,start
-imap ;l <ESC>
-imap ;л <ESC>
 
 " Copy-paste
-nmap <C-q> "+gP
-imap <C-q> <ESC><C-q>i
-vmap <C-c> "+y
+vmap <C-y> "+y
+nmap <C-p> "+p
+vmap <C-p> "+p
+imap <C-p> <ESC><C-p>i
 
 " vim-latex
 set grepprg=grep\ -nH\ $*
