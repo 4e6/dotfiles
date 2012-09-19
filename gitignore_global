@@ -1,0 +1,17 @@
+# Vim
+#*.swp
+
+# Emacs
+#.#*
+
+# Ensime
+.ensime
+.ensime_lucene
+
+# Eclipse
+.cache
+.classpath
+.project
+.settings/
+.target/
+/bin/
