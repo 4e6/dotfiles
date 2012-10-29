@@ -4,6 +4,10 @@
 # Emacs
 #.#*
 
+# SBT
+# Favorite IDE
+/project/ide.sbt
+
 # Ensime
 .ensime
 .ensime_lucene
@@ -15,3 +19,6 @@
 .settings/
 .target/
 /bin/
+
+# logs
+/logs
