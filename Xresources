@@ -12,6 +12,7 @@ Xft.hintstyle:            hintslight
 ! URxvt settings
 !
 
+URxvt*termName:           rxvt-256color
 URxvt.loginShell:         true
 URxvt.perl-lib:           /usr/lib/urxvt/perl/
 URxvt.perl-ext-common:    default,matcher
@@ -19,8 +20,8 @@ URxvt.matcher.button:     1
 URxvt.urlLauncher:        /usr/bin/chromium
 
 ! Appearance
-URxvt*font:               xft:Dejavu Sans Mono:pixelsize=13
-URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=13
+URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
+URxvt*boldFont:           xft:Dejavu Sans Mono:bold:pixelsize=12
 URxvt.depth:              32
 URxvt.transparent:        false
 URxvt.fading:             0
@@ -32,7 +33,7 @@ URxvt.scrollBar:          false
 URxvt*background:         #3f3f3f
 URxvt*foreground:         #dcdccc
 URxvt*cursorColor:        #aaaaaa
-URxvt*colorUL:            #366060
+URxvt*colorUL:            #c5f779
 URxvt*underlineColor:     #dfaf8f
 URxvt*color0:             #3f3f3f
 URxvt*color1:             #cc9393
