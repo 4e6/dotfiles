@@ -229,6 +229,8 @@ alias rm='nocorrect rm -i'
 alias rmf='nocorrect rm -f'
 alias rmrf='nocorrect rm -fR'
 alias mkdir='nocorrect mkdir'
+alias vim='nocorrect vim'
+alias sudo='nocorrect sudo'
 # Global
 alias -g H="| head"
 alias -g T="| tail"
@@ -241,8 +243,7 @@ alias -g CU="| iconv -c -f cp1251 -t utf8"
 alias -g UK="| iconv -c -f utf8 -t koi8r"
 alias -g UC="| iconv -c -f utf8 -t cp1251"
 # sudo
-alias spacman="sudo pacman-color"
+alias sduo="sudo"
 alias halt="sudo halt"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
-alias svim="sudo vim"
