@@ -1,3 +1,2 @@
 EDITFILES=0
 BUILD_NOCONFIRM=1
-PACMAN="pacman-color"
