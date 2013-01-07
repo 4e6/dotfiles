@@ -42,6 +42,8 @@ zstyle ':completion:*:*:(^rm):*:*files' ignored-patterns '*?.o' '*?.c~''*?.old' 
 zstyle ':completion:*:functions' ignored-patterns '_*'
 # Nice 'kill' completion
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
+# Rebuild autocomplete index
+zstyle ':completion:*commands' rehash 1
 
 # Menu for autocomplete
 zstyle ':completion:*' menu yes select
