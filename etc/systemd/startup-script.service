@@ -1,0 +1,10 @@
+[Unit]
+Description=Startup Script
+After=dbus.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/etc/scripts/startup
+
+[Install]
+WantedBy=multi-user.target

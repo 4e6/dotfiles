@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#
+# Set of sartup tweaks
+#
+
+TRACKPOINT=/sys/devices/platform/i8042/serio1/serio2
+
+# Disable bluetooth
+/usr/sbin/rfkill block bluetooth
+
+# Tweak trackpoint
+(
+  while [[ ! -a $TRACKPOINT/speed || ! -a $TRACKPOINT/sensitivity ]]
+  do sleep 1; done
+  echo -n 120 > $TRACKPOINT/speed
+  echo -n 255 > $TRACKPOINT/sensitivity
+)
