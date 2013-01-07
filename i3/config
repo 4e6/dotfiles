@@ -10,11 +10,15 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-#set $mod Mod1
 
-# font for window titles. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font -*-terminus-bold-*-*-*-14-*-*-*-*-*-iso10646-*
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below. ISO 10646 = Unicode
+font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+# The font above is very space-efficient, that is, it looks good, sharp and
+# clear in small sizes. However, if you need a lot of unicode glyphs or
+# right-to-left text rendering, you should instead use pango for rendering and
+# chose a FreeType font, such as:
+# font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -23,19 +27,16 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
-bindsym $mod+Shift+Q kill
+bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -fn "xft:Dejavu Sans Mono:pixelsize=14"
-
-# lockscreen
-bindsym XF86ScreenSaver exec i3lock -i /home/_4e6/Downloads/wp/128541676398.png -p win
+bindsym $mod+d exec dmenu_run
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-#bindsym $mod+j focus left
-#bindsym $mod+k focus down
-#bindsym $mod+l focus up
-#bindsym $mod+semicolon focus right
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -48,14 +49,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+J move left
-#bindsym $mod+Shift+K move down
-#bindsym $mod+Shift+L move up
-#bindsym $mod+Shift+colon move right
-bindsym $mod+Shift+H move left
-bindsym $mod+Shift+J move down
-bindsym $mod+Shift+K move up
-bindsym $mod+Shift+L move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -64,7 +61,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+V split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -72,10 +69,10 @@ bindsym $mod+v split v
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
 
-# change container layout (stacked, tabbed, default)
+# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout default
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -87,11 +84,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindcode $mod+d focus child
-
-# assign workspaces
-workspace 10 output VGA1
-workspace 1 output DisplayPort-0
+#bindsym $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -106,63 +99,42 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+exclam move workspace 1
-bindsym $mod+Shift+at move workspace 2
-bindsym $mod+Shift+numbersign move workspace 3
-bindsym $mod+Shift+dollar move workspace 4
-bindsym $mod+Shift+percent move workspace 5
-bindsym $mod+Shift+asciicircum move workspace 6
-bindsym $mod+Shift+ampersand move workspace 7
-bindsym $mod+Shift+asterisk move workspace 8
-bindsym $mod+Shift+parenleft move workspace 9
-bindsym $mod+Shift+parenright move workspace 10
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+C reload
+bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R restart
+bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
-
-# scratchpad
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the first scratchpad window
-bindsym $mod+minus scratchpad show
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
   # These bindings trigger as soon as you enter the resize mode
 
-  # They resize the border in the direction you pressed, e.g.
-  # when pressing left, the window is resized so that it has
-  # more space on its left
-
-  bindsym h resize shrink left 10 px or 10 ppt
-  bindsym Shift+H resize grow   left 10 px or 10 ppt
-
-  bindsym j resize shrink down 10 px or 10 ppt
-  bindsym Shift+J resize grow   down 10 px or 10 ppt
-
-  bindsym k resize shrink up 10 px or 10 ppt
-  bindsym Shift+K resize grow   up 10 px or 10 ppt
-
-  bindsym l resize shrink right 10 px or 10 ppt
-  bindsym Shift+L resize grow   right 10 px or 10 ppt
+  # Pressing left will shrink the window’s width.
+  # Pressing right will grow the window’s width.
+  # Pressing up will shrink the window’s height.
+  # Pressing down will grow the window’s height.
+  bindsym h resize shrink width 10 px or 10 ppt
+  bindsym j resize grow height 10 px or 10 ppt
+  bindsym k resize shrink height 10 px or 10 ppt
+  bindsym l resize grow width 10 px or 10 ppt
 
   # same bindings, but for the arrow keys
-  bindsym Left resize shrink left 10 px or 10 ppt
-  bindsym Shift+Left resize grow   left 10 px or 10 ppt
-
-  bindsym Down resize shrink down 10 px or 10 ppt
-  bindsym Shift+Down resize grow   down 10 px or 10 ppt
-
-  bindsym Up resize shrink up 10 px or 10 ppt
-  bindsym Shift+Up resize grow   up 10 px or 10 ppt
-
-  bindsym Right resize shrink right 10 px or 10 ppt
-  bindsym Shift+Right resize grow   right 10 px or 10 ppt
+  bindsym Left resize shrink width 10 px or 10 ppt
+  bindsym Down resize grow height 10 px or 10 ppt
+  bindsym Up resize shrink height 10 px or 10 ppt
+  bindsym Right resize grow width 10 px or 10 ppt
 
   # back to normal: Enter or Escape
   bindsym Return mode "default"
@@ -171,17 +143,48 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
+# Colors
+# class                 border  backgr. text
+client.focused          #525252 #1E1E1E #F5DEB3
+client.focused_inactive #333333 #0F0F0F #E3CCA1
+client.unfocused        #333333 #010101 #85753A
+client.urgent           #856E23 #900000 #F5DEB3
+
+# Focus windows when the mouse hovers them
+focus_follows_mouse no
+
+# Leave fullscreen when a application creates a popup
+popup_during_fullscreen leave_fullscreen
+
+# When switching to a workspace pressing the same button again get's you back to the previous one
+workspace_auto_back_and_forth yes
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-  font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+  status_command i3status -c .i3/status.conf
 
-  #status_command .i3/my_i3status.sh
-  status_command i3status -c .i3/i3status.conf
+  colors {
+    background         #0F0F0F
+    statusline         #F5DEB3
+
+    focused_workspace  #F5DEB3 #666666
+    active_workspace   #F5DEB3 #0F0F0F
+    inactive_workspace #F5DEB3 #1E1E1E
+    urgent_workspace   #ffffff #900000
+  }
 }
 
 assign [title="^htop$"] → 10
 
-exec i3lock -i /home/_4e6/Downloads/wp/128541676398.png -p win
-exec emacs --daemon
+# Autostart
 exec urxvtc -name htop -e htop
+
+# Extra bindings
+bindsym XF86AudioMute         exec amixer set Master toggle
+bindsym XF86AudioLowerVolume  exec amixer set Master 5dB-
+bindsym XF86AudioRaiseVolume  exec amixer set Master 5dB+ unmute
+
+bindsym XF86Battery           exec xset dpms force off
+bindsym XF86TouchpadToggle    exec touchpad-toggle
