@@ -13,8 +13,8 @@ fi
 
 export TERMINAL=urxvtc
 
+devmon --sync &
 urxvtd &
-udiskie &
 setxkbmap -layout us,ru -variant ,phonetic -option grp:shift_toggle,grp_led:scroll
 xset r rate 190 30
 xset -dpms # Disable dpms
