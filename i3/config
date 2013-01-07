@@ -143,7 +143,6 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
 # Colors
 # class                 border  backgr. text
 client.focused          #525252 #1E1E1E #F5DEB3

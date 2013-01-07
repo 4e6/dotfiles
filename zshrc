@@ -244,6 +244,6 @@ alias -g UK="| iconv -c -f utf8 -t koi8r"
 alias -g UC="| iconv -c -f utf8 -t cp1251"
 # sudo
 alias sduo="sudo"
-alias halt="sudo halt"
+alias wifi-menu="sudo wifi-menu"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
