@@ -1,4 +1,4 @@
 dotfiles
 ========
 
-My config files
+GTK Theme: HighContrast [lxappearance gnome-themes-standard]
