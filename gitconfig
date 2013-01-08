@@ -1,0 +1,11 @@
+[core]
+  editor = vim
+  excludesfile = ~/.gitignore_global
+[merge]
+  tool = vimdiff
+[push]
+  default = simple
+[alias]
+  glog = log --pretty=format:'%h : %s' --graph
+[color]
+  ui = auto
