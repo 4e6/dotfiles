@@ -153,8 +153,8 @@ function prompt_char {
 # Enables additional prompt extentions
 setopt prompt_subst
 
-PROMPT='%F{cyan}%c%f %F{green}${vcs_info_msg_0_}%f%F{grey}$(prompt_char)%f %B'
-RPROMPT='%b%F{grey}%~/%f %(?.%F{green}:%)%f.%F{red}:(%f)'
+PROMPT='%F{cyan}%c%f %F{green}${vcs_info_msg_0_}%f%F{grey}$(prompt_char)%f '
+RPROMPT='%F{grey}%~/%f %(?.%F{green}:%)%f.%F{red}:(%f)'
 
 # Escape special characters in urls like &,?,~
 autoload -U url-quote-magic
@@ -247,5 +247,6 @@ alias -g UC="| iconv -c -f utf8 -t cp1251"
 # sudo
 alias sduo="sudo"
 alias wifi-menu="sudo wifi-menu"
+alias systemctl="sudo systemctl"
 alias poweroff="sudo poweroff"
 alias reboot="sudo reboot"
