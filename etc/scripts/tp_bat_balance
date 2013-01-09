@@ -1,0 +1,113 @@
+#!/usr/bin/perl
+# Keep two ThinkPad batteries (system battery and UltraBay) at similar charge levels
+# during discharge by switching back and forth. This reduces wear on the UltraBay
+# battery, compared to the hardware's default strategy of fully draining the UltraBay
+# battery before switching to the system battery.
+# WARNING: This script is experimental and uses undocumented hardware features.
+# WARNING: If this script crashes, your battery may be forced to keep draining until empty.
+# Distributed under the terms of the GNU General Public License v2 or later.
+
+use strict;
+use warnings;
+use File::Slurp;
+
+my $thresh = 3; # difference between battery charge levels that justifies switching (hysteresis)
+
+my $default_discharge = 0; # the battery that's discharged as first priority by the BIOS
+my $smapi_dir = '/sys/devices/platform/smapi';
+
+my $ac_connected;
+my @bat_installed;
+my @bat_remaining;
+my @bat_state;
+my @bat_power_avg;
+my @bat_force_discharge;
+
+$SIG{'INT'} = $SIG{'QUIT'} = $SIG{'TERM'} = sub { die("# Killed by SIG$_[0]\n"); };
+
+sub read_chomp_file {
+  my ($filename) = @_;
+  my ($x) = read_file($filename) or die "Cannot read $filename\n";
+  chomp($x);
+  return $x;
+}
+
+# Read battery status from tp_smapi sysfs interface
+sub read_status {
+  $ac_connected = read_chomp_file("$smapi_dir/ac_connected");
+  for my $b (0..1) {
+    $bat_installed[$b] = read_chomp_file("$smapi_dir/BAT$b/installed");
+    $bat_force_discharge[$b] = read_chomp_file("$smapi_dir/BAT$b/force_discharge");
+    if ($bat_installed[$b]) {
+      $bat_remaining[$b] = read_chomp_file("$smapi_dir/BAT$b/remaining_percent");
+      $bat_state[$b] = read_chomp_file("$smapi_dir/BAT$b/state");
+      $bat_power_avg[$b] = read_chomp_file("$smapi_dir/BAT$b/power_avg") / 1000.0;
+    }
+    else { $bat_state[$b] = 'none'; }  #This var needs to always have a value for print_bat to not break. This covers the case of starting the program without a battery in the bay/slot.
+  }
+}
+
+# Print status to stdout (ASCII graphics)
+sub print_status {
+  print "   ";
+  sub print_bat {
+    my ($b) = @_;
+    my ($ll,$lr,$rl,$rr) = $b ? ('-','>','<','-') : ('<','-','-','>');
+    my $icon = sprintf("[%3s]", $bat_installed[$b] ? $bat_remaining[$b]."%" : "");
+    my $arrow;
+    my $state = $bat_state[$b];
+    if ($state eq 'charging') {
+      $arrow = sprintf("$ll--%4.1f--$lr", $bat_power_avg[$b]);
+    } elsif ($state eq 'discharging') {
+      $arrow = sprintf("$rl--%4.1f--$rr", -$bat_power_avg[$b]);
+    } elsif ($state eq 'idle' || $state eq 'none') {  #Added none to cover case with no battery in slot when program was started.
+      $arrow = "          ";
+    } else {
+      die "Unknown state $state for battery $b";
+    }
+    print($b ? "$arrow$icon" : "$icon$arrow");
+  }
+  print_bat(0);
+  print($ac_connected ? ' {AC} ' : ' {  } ');
+  print_bat(1);
+  print("\n");
+}
+
+# Choose which battery to discharge
+sub choose_discharge {
+  sub set_force_discharge {
+    my ($b,$on) = @_;
+    return if $b!=$default_discharge; # the non-default battery will be discharged only when necessary anyway
+    return if $bat_force_discharge[$b]==$on;
+    write_file("$smapi_dir/BAT$b/force_discharge", ($on?'1':'0')) or die ("Cannot write to $smapi_dir/BAT$b/force_discharge: $!\n");
+    print("# setting force_discharge on battery $b to $on\n");
+    $bat_force_discharge[$b] = $on;
+  }
+
+  if ($ac_connected || !$bat_installed[0] || !$bat_installed[1]) {
+    for $b (0..1) {
+      set_force_discharge($b,0);
+    }
+  } else {
+    if ($bat_remaining[0] > $bat_remaining[1] + $thresh) {
+      set_force_discharge(0,1);
+      set_force_discharge(1,0);
+    } elsif ($bat_remaining[1] > $bat_remaining[0] + $thresh) {
+      set_force_discharge(0,0);
+      set_force_discharge(1,1);
+    }
+  }
+}
+
+while (1) {
+  read_status;
+  print_status;
+  choose_discharge;
+  sleep(5);
+}
+
+END {
+  print("# Cleanup\n");
+  write_file("$smapi_dir/BAT0/force_discharge", ('0'));
+  write_file("$smapi_dir/BAT1/force_discharge", ('0'));
+}
