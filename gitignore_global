@@ -10,7 +10,7 @@
 
 # Ensime
 .ensime
-.ensime_lucene
+.ensime_lucene/
 
 # Eclipse
 .cache
