@@ -6,6 +6,7 @@
 
 # SBT
 # Favorite IDE
+target/
 /project/ide.sbt
 
 # Ensime
