@@ -203,9 +203,11 @@ autoload -U zcalc
 export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium
-export SBT_OPTS='-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=512M'
+export SBT_OPTS='-Xms512M -Xmx2G -Xss8M -XX:MaxPermSize=512M -XX:+CMSClassUnloadingEnabled'
+export ANT_OPTS='-Xms2G -Xmx5G -Xss8M -XX:MaxPermSize=512M -XX:+UseParallelGC'
 export GTK_USE_XFT=1
 export JAVA_FONTS=/usr/share/fonts/TTF
+export JREBEL_PATH=/opt/jrebel/jrebel.jar
 source ~/.ec2rc
 PATH=$PATH:~/.gem/ruby/1.9.1/bin
 
