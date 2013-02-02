@@ -47,10 +47,10 @@ colorscheme zenburn
 set backspace=indent,eol,start
 
 " Copy-paste
-vmap <C-y> "+y
-nmap <C-p> "+p
-vmap <C-p> "+p
-imap <C-p> <ESC><C-p>i
+vmap <C-w> "+y
+nmap <C-y> "+p
+vmap <C-y> "+p
+imap <C-y> <ESC><C-y>i
 
 " vim-latex
 set grepprg=grep\ -nH\ $*
