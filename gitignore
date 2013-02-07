@@ -13,6 +13,7 @@ target/
 .ensime
 .ensime_lucene/
 /ensime.sbt
+flycheck*.ensime
 
 # Eclipse
 .cache

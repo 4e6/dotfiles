@@ -204,7 +204,7 @@ export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium
 export SBT_OPTS='-Xms512M -Xmx2G -Xss8M -XX:MaxPermSize=512M -XX:+CMSClassUnloadingEnabled'
-export ANT_OPTS='-Xms2G -Xmx5G -Xss8M -XX:MaxPermSize=512M -XX:+UseParallelGC'
+export ANT_OPTS='-Xms2G -Xmx6G -Xss8M -XX:MaxPermSize=512M -XX:+UseParallelGC'
 export GTK_USE_XFT=1
 export JAVA_FONTS=/usr/share/fonts/TTF
 export JREBEL_PATH=/opt/jrebel/jrebel.jar
