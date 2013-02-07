@@ -12,6 +12,7 @@ target/
 # Ensime
 .ensime
 .ensime_lucene/
+ensime.sbt
 
 # Eclipse
 .cache
