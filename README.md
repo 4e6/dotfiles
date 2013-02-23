@@ -12,7 +12,7 @@ Required packages:
 
   _HighContrast_ GTK theme
 
-* urxvt-clipboard
+* urxvt-perls
 
   Syncronize text selection
 

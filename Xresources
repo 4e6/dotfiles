@@ -15,9 +15,15 @@ Xft.hintstyle:            hintfull
 URxvt*termName:           rxvt-256color
 URxvt.loginShell:         true
 URxvt.perl-lib:           /usr/lib/urxvt/perl/
-URxvt.perl-ext-common:    default,matcher,clipboard
+URxvt.perl-ext-common:    default,matcher,clipboard,keyboard-select
 URxvt.url-launcher:       /usr/bin/chromium
 URxvt.matcher.button:     1
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c:         perl:clipboard:copy
+URxvt.keysym.M-v:         perl:clipboard:paste
+URxvt.keysym.M-C-v:       perl:clipboard:paste_escaped
+URxvt.keysym.M-Escape:    perl:keyboard-select:activate
+URxvt.keysym.M-s:         perl:keyboard-select:search
 
 ! Appearance
 URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
