@@ -1,4 +1,5 @@
-(if (not (package-installed-p 'auctex)) (package-install 'auctex))
+;;(if (not (package-installed-p 'auctex)) (package-install 'auctex))
+(prelude-ensure-module-deps '(auctex))
 
 (custom-set-variables '(fill-column 120))
 (setq TeX-PDF-mode t)
