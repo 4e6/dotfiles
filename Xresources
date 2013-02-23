@@ -15,7 +15,7 @@ Xft.hintstyle:            hintfull
 URxvt*termName:           rxvt-256color
 URxvt.loginShell:         true
 URxvt.perl-lib:           /usr/lib/urxvt/perl/
-URxvt.perl-ext-common:    default,matcher
+URxvt.perl-ext-common:    default,matcher,clipboard
 URxvt.url-launcher:       /usr/bin/chromium
 URxvt.matcher.button:     1
 
