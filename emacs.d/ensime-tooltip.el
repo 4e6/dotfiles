@@ -1,7 +1,6 @@
 ;; Show ensime tooltip
 
 (require 'thingatpt)
-(require 'ensime)
 
 (defvar ensime-tooltip-timer nil
  "Timer to activate re-highlighting.")
@@ -30,4 +29,6 @@
         (run-with-idle-timer 0.5 :repeat 'ensime-tooltip-word-at-point))))
 
 (provide 'ensime-tooltip)
+
+(global-set-key (kbd "C-c C-t") '(lambda () (interactive) (ensime-tooltip-word-at-point)))
 ;;; ensime-tooltip.el ends here
