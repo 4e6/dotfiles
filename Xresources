@@ -16,8 +16,8 @@ URxvt*termName:           rxvt-256color
 URxvt.loginShell:         true
 URxvt.perl-lib:           /usr/lib/urxvt/perl/
 URxvt.perl-ext-common:    default,matcher
+URxvt.url-launcher:       /usr/bin/chromium
 URxvt.matcher.button:     1
-URxvt.urlLauncher:        /usr/bin/chromium
 
 ! Appearance
 URxvt*font:               xft:Dejavu Sans Mono:pixelsize=12
