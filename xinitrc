@@ -21,8 +21,5 @@ xset -dpms # Disable dpms
 xset s off # Disable screen saver
 xrdb -merge .Xresources
 xmodmap .xmod
-# Syncronize clipboard
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
 
 exec i3
