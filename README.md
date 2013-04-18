@@ -19,3 +19,7 @@ Required packages:
 * markdown
 
   Compile and preview `md` files in Emacs
+
+* sbt-extras-git
+
+  sbt: the rebel cut
