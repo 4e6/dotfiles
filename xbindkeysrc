@@ -1,0 +1,12 @@
+"xbacklight -dec 10"
+  XF86MonBrightnessDown
+"xbacklight -inc 10"
+  XF86MonBrightnessUp
+
+"amixer -c 0 set Master 1dB-"
+  XF86AudioLowerVolume
+"amixer -c 0 set Master 1dB+ unmute"
+  XF86AudioRaiseVolume
+
+"amixer -c 0 set Master toggle"
+  XF86AudioMute
