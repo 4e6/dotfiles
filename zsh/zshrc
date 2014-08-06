@@ -22,9 +22,9 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-source /usr/share/doc/pkgfile/command-not-found.zsh
-source ~/.zshrc.prompt
-source ~/.zshrc.alias
-
 typeset -U path
 path=(~/bin $path)
+
+[[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
+[[ -f ~/.zshrc.prompt ]] && source ~/.zshrc.prompt
+[[ -f ~/.zshrc.alias ]] && source ~/.zshrc.alias
