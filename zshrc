@@ -12,6 +12,8 @@ zstyle ':completion:*' verbose false
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -e -o pid,%cpu,tty,cputime,cmd'
 
+zstyle ':completion:*' menu select
+
 autoload -Uz compinit
 compinit
 #autoload -U promptinit
@@ -20,7 +22,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd
+setopt autocd completealiases
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
