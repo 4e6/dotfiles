@@ -9,6 +9,9 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
 zstyle ':completion:*' verbose false
 
+zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
+zstyle ':completion:*:kill:*' command 'ps -e -o pid,%cpu,tty,cputime,cmd'
+
 autoload -Uz compinit
 compinit
 #autoload -U promptinit
