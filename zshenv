@@ -1,5 +1,5 @@
 typeset -U path
-path=(~/bin $path)
+path=(~/bin /opt/idea/bin $path)
 
 export TERMINAL=urxvtc
 export EDITOR=vim
