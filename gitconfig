@@ -1,3 +1,5 @@
+[credential]
+  helper = store
 [core]
   editor = vim
   excludesfile = ~/.gitignore
@@ -6,6 +8,10 @@
 [push]
   default = simple
 [alias]
+  co = checkout
+  ss = status
   glog = log --pretty=format:'%h : %s' --graph
+  onelog = log --graph --oneline --decorate
+  fetchlog = log ORIG_HEAD.. --stat --no-merges
 [color]
   ui = auto
