@@ -16,8 +16,6 @@ zstyle ':completion:*' menu select
 
 autoload -Uz compinit
 compinit
-#autoload -U promptinit
-#promptinit
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -28,6 +26,5 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 
 [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
-[[ -f ~/.zshenv ]] && source ~/.zshenv
 [[ -f ~/.zshrc.prompt ]] && source ~/.zshrc.prompt
 [[ -f ~/.zshrc.alias ]] && source ~/.zshrc.alias

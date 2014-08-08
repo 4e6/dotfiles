@@ -1,12 +1,13 @@
 alias sudo='sudo '
 
-alias ls='ls --color'
+alias ls='ls -h --color'
 alias ll='ls -l'
 alias la='ls -la'
 alias -g grep='grep --color'
 
-alias systemctl='sudo systemctl'
 alias reboot='sudo reboot'
 alias poweroff='sudo poweroff'
 alias wifi-menu='sudo wifi-menu'
 alias tlp='sudo tlp'
+alias wifi='sudo wifi'
+alias bluetooth='sudo bluetooth'

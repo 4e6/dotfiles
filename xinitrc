@@ -11,15 +11,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-export TERMINAL=urxvtc
+xbindkeys
+urxvtd -q -o -f
 
-devmon --sync &
-urxvtd &
 setxkbmap -layout us,ru -variant ,phonetic -option grp:shift_toggle,grp_led:scroll
 xset r rate 190 30
-xset -dpms # Disable dpms
-xset s off # Disable screen saver
-xrdb -merge .Xresources
-xmodmap .xmod
+xset -dpms
+xset s off
+[[ -f .Xresources ]] && xrdb -merge .Xresources
+[[ -f .xmod ]] && xmodmap .xmod
 
 exec i3
