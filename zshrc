@@ -2,8 +2,8 @@
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _complete _ignored
-zstyle ':completion:*' format 'Completing %d'
+zstyle ':completion:*' completer _approximate _complete _ignored
+zstyle ':completion:*' format '-- %d --'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 zstyle ':completion:*' preserve-prefix '//[^/]##/'
@@ -20,7 +20,7 @@ compinit
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd completealiases
+setopt autocd hist_ignore_dups
 unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
