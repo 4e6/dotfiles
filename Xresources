@@ -84,6 +84,9 @@ xterm*faceName:           Ubuntu Mono
 xterm*faceSize:           8
 xterm*cursorColor:        #DCDCCC
 
+! Emacs
+Emacs.font:               Ubuntu Mono 8
+
 ! Zenburn
 xterm*background:         #3f3f3f
 xterm*foreground:         #dcdccc
