@@ -2,7 +2,7 @@
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description 'specify: %d'
-zstyle ':completion:*' completer _approximate _complete _ignored
+zstyle ':completion:*' completer _expand_alias _expand _complete _correct _ignored _approximate
 zstyle ':completion:*' format '-- %d --'
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
