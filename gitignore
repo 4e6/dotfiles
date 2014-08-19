@@ -11,7 +11,7 @@ target/
 
 # Ensime
 .ensime
-.ensime_lucene/
+.ensime_cache/
 /ensime.sbt
 flycheck*.ensime
 
