@@ -184,3 +184,5 @@ exec urxvtc -title htop -e htop
 
 assign [title="^wifi$"] → 10
 exec urxvtc -title wifi -e sh -c 'sudo wifi-menu'
+
+exec i3lock -c 3f3f3f
