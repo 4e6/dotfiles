@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-    .-(~/projects/misc/dotfiles)----------------------------------------------------(dbushev@carbon)-
+    .-(~/projects/misc/dotfiles)----------------------------------(dbushev@carbon)-
     `--[master]± screenfetch
                        -`
                       .o+`                 dbushev@carbon
