@@ -1,27 +1,12 @@
-# Vim
-#*.swp
-
-# Emacs
-#.#*
-
-# SBT
-# Favorite IDE
+# sbt
 target/
-/project/ide.sbt
 
-# Ensime
+# ensime
 .ensime
 .ensime_cache/
-/ensime.sbt
-flycheck*.ensime
 
-# Eclipse
-.cache
-.classpath
-.project
-.settings/
-.target/
-/bin/
+# idea
+/.idea
 
 # logs
 /logs
