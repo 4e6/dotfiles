@@ -13,7 +13,7 @@
 [alias]
   co = checkout
   ss = status
-  glog = log --pretty=format:'%h : %s' --graph
+  glog = log --pretty=format:'%C(auto)%h %ad%d : %an %s' --graph --date=relative
   onelog = log --graph --oneline --decorate
   fetchlog = log ORIG_HEAD.. --stat --no-merges
 [color]
