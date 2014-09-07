@@ -10,3 +10,9 @@
 
 "amixer -c 0 set Master toggle"
   XF86AudioMute
+
+"i3lock -c 3f3f3f && xset dpms force off"
+  XF86Display
+
+"i3lock -c 3f3f3f"
+  control+alt + l
