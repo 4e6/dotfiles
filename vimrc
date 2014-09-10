@@ -39,8 +39,6 @@ set smarttab
 " Indent as many times as you want in visual mode without losing focus
 vnoremap < <gv
 vnoremap > >gv
-" Make a curly brace automatically insert an indented line
-inoremap {<CR> {<CR>}<Esc>O<BS><Tab>
 
 " Colorscheme
 syntax enable
