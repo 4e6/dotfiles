@@ -1,3 +1,5 @@
+silent! execute pathogen#infect()
+
 " NerdTree Mapping
 nmap <silent> <F2> :NERDTreeToggle<CR>
 
