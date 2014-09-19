@@ -1,5 +1,7 @@
 # sbt
 target/
+/.lib-src/
+/tags
 
 # ensime
 .ensime
@@ -8,5 +10,6 @@ target/
 # idea
 /.idea
 
-# logs
+# misc
 /logs
+/.local/
