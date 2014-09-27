@@ -22,6 +22,7 @@ set bs=2 " Backspace, this is the same as :set backspace=indent,eol,start.
 set scrolloff=5 " Show 5 lines above/below the cursor when scrolling.
 set showcmd " Shows the command in the last line of the screen.
 set autoread " Read files when they've been changed outside of Vim.
+au CursorHold * checktime " When 'CursorHold' every 4 seconds check file change
 set visualbell " Disable beeps
 
 " Highlight search results
