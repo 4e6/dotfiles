@@ -18,7 +18,7 @@ set nu " Show line numbers
 set title " Set window title
 set list " Display invisible chars
 set ruler " Display row/column info
-set bs=2 " Backspace, this is the same as :set backspace=indent,eol,start.
+set bs=indent,eol,start " Backspace
 set scrolloff=5 " Show 5 lines above/below the cursor when scrolling.
 set showcmd " Shows the command in the last line of the screen.
 set autoread " Read files when they've been changed outside of Vim.
@@ -33,7 +33,6 @@ set smartcase " Make searches case sensitive only if they contain uppercase stuf
 
 " Indent/tab options
 set expandtab " Use spaces for tabs.
-set ts=2 " Number of spaces to use for tabs.
 set shiftwidth=2 " Number of spaces to autoindent.
 set softtabstop=2 " Number of spaces for a tab.
 set smarttab
