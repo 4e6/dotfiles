@@ -56,3 +56,9 @@ imap <C-y> <ESC><C-y>i
 " vim-latex
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor="latex"
+
+" ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(class|so)',
+  \ }
