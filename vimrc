@@ -62,3 +62,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir': '\v[\/]\.(git|hg|svn)$',
   \ 'file': '\v\.(class|so)',
   \ }
+
+" idris-vim
+let g:idris_conceal=1 " Concealing with unicode characters
