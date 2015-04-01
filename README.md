@@ -6,17 +6,17 @@ dotfiles
                        -`
                       .o+`                 dbushev@carbon
                      `ooo/                 OS: Arch Linux
-                    `+oooo:                Kernel: x86_64 Linux 3.16.1-1-ARCH
-                   `+oooooo:               Uptime: 13h 8m
-                   -+oooooo+:              Packages: 514
-                 `/:-:++oooo+:             Shell: zsh 5.0.5
+                    `+oooo:                Kernel: x86_64 Linux 3.19.2-1-ARCH
+                   `+oooooo:               Uptime: 1h 0m
+                   -+oooooo+:              Packages: 506
+                 `/:-:++oooo+:             Shell: zsh 5.0.7
                 `/++++/+++++++:            Resolution: 2560x1440
                `/++++++++++++++:           WM: i3
-              `/+++ooooooooooooo/`         GTK Theme: Zukitwo [GTK2], Zukitwo [GTK3]
-             ./ooosssso++osssssso+`        Icon Theme: HighContrast
-            .oossssso-````/ossssss+`       Font: Ubuntu Light 8
+              `/+++ooooooooooooo/`         GTK Theme: Paper [GTK2], Paper [GTK3]
+             ./ooosssso++osssssso+`        Icon Theme: Paper
+            .oossssso-````/ossssss+`       Font: Ubuntu 8
            -osssssso.      :ssssssso.      CPU: Intel Core i7-4600U CPU @ 3.3GHz
-          :osssssss/        osssso+++.     RAM: 1616MB / 7869MB
+          :osssssss/        osssso+++.     RAM: 1715MB / 7868MB
          /ossssssss/        +ssssooo/-
        `/ossssso+/:-        -:/+osssso+-
       `+sso+:-`                 `.-/+oso:
