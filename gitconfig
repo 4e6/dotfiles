@@ -1,20 +1,21 @@
 [credential]
-  helper = store
+	helper = store
 [core]
-  editor = vim
-  excludesfile = ~/.gitignore
+	editor = vim
+	excludesfile = ~/.gitignore
 [merge]
-  tool = vimdiff3
-  conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [push]
-  default = simple
+	default = simple
 [tag]
-  sort = version:refname
+	sort = version:refname
 [alias]
-  co = checkout
-  ss = status
-  glog = log --pretty=format:'%C(auto)%h %ad%d : %an %s' --graph --date=relative
-  onelog = log --graph --oneline --decorate
-  fetchlog = log ORIG_HEAD.. --stat --no-merges
+	co = checkout
+	ss = status
+	plog = log --graph --pretty=format:'%C(auto)%h %ad%d : %an %s' --date=relative
+	glog = log --graph --oneline --decorate
+	fetchlog = log ORIG_HEAD.. --stat --no-merges
+	gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
 [color]
-  ui = auto
+	ui = auto
