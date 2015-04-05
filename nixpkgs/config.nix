@@ -1,7 +1,7 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: rec {
-    myLibtiff =
+    libtiff =
       let
         colorsPatch = pkgs.fetchurl {
           url = "https://projects.archlinux.org/svntogit/packages.git/plain/trunk/tiff-4.0.3-tiff2pdf-colors.patch?h=packages/libtiff";
@@ -74,7 +74,15 @@
           '';
         });
 
-    workEnv = pkgs.buildEnv {
+    libopus = pkgs.stdenv.lib.overrideDerivation pkgs.libopus (oldattrs : {
+      name = "opus-1.1.1-beta";
+      src = pkgs.fetchurl {
+        url = "http://downloads.us.xiph.org/releases/opus/opus-1.1.1-beta.tar.gz";
+        sha256 = "1k96hrpscf9gmbms3spjasiga1k6d3k4kp69kxq18syivhwqcrhc";
+      };
+    });
+
+    myWorkEnv = pkgs.buildEnv {
       name = "workEnv";
       paths = [ pkgs.emacs ];
     };
