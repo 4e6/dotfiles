@@ -57,7 +57,7 @@
           name = "tiff-4.0.3-CVE-2013-4232.patch";
         };
       in
-        pkgs.stdenv.lib.overrideDerivation pkgs.libtiff (oldattrs : {
+        pkgs.libtiff.overrideDerivation (attrs: {
           patchPhase = ''
             patch -p0 -i "${colorsPatch}"
             patch -p1 -i "${cve4447Patch}"
@@ -74,7 +74,7 @@
           '';
         });
 
-    libopus = pkgs.stdenv.lib.overrideDerivation pkgs.libopus (oldattrs : {
+    libopus = pkgs.libopus.overrideDerivation (attrs: {
       name = "opus-1.1.1-beta";
       src = pkgs.fetchurl {
         url = "http://downloads.us.xiph.org/releases/opus/opus-1.1.1-beta.tar.gz";
@@ -82,7 +82,15 @@
       };
     });
 
-    myWorkEnv = pkgs.buildEnv {
+    xdg_utils = pkgs.xdg_utils.overrideDerivation (attrs: {
+      src = pkgs.fetchgit {
+        url = "http://anongit.freedesktop.org/git/xdg/xdg-utils.git";
+        rev = attrs.src.rev;
+        sha256 = "0qy9h7vh6sw7wmadjvasw4sdhb9fvv7bn32ifgasdx7ag3r3939w";
+      };
+    });
+
+    workEnv = pkgs.buildEnv {
       name = "workEnv";
       paths = [ pkgs.emacs ];
     };
