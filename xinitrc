@@ -11,14 +11,17 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-xbindkeys
-urxvtd -q -o -f
-
+# settings
 setxkbmap -layout us,ru -variant ,phonetic -option grp:shift_toggle,grp_led:scroll
 xset r rate 190 30
 xset -dpms
 xset s off
-[[ -f .Xresources ]] && xrdb -merge .Xresources
-[[ -f .xmod ]] && xmodmap .xmod
+xset -b # disable beep
+[ -f .Xresources ] && xrdb -merge .Xresources
+[ -f .xmod ] && xmodmap .xmod
+
+# daemons
+xbindkeys
+urxvtd -q -o -f
 
 exec i3
