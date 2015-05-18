@@ -4,5 +4,5 @@
 
 for bundle in ~/.vim/bundle/*
 do
-  (echo "Updating $(basename $bundle)" && cd $bundle && git pull)
+  (echo "= Updating $(basename $bundle)" && cd $bundle && git pull)
 done

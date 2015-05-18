@@ -1,7 +1,7 @@
 {
   allowUnfree = true;
   packageOverrides = pkgs: rec {
-    libtiff =
+    myLibtiff =
       let
         colorsPatch = pkgs.fetchurl {
           url = "https://projects.archlinux.org/svntogit/packages.git/plain/trunk/tiff-4.0.3-tiff2pdf-colors.patch?h=packages/libtiff";
@@ -74,7 +74,7 @@
           '';
         });
 
-    libopus = pkgs.libopus.overrideDerivation (attrs: {
+    myLibopus = pkgs.libopus.overrideDerivation (attrs: {
       name = "opus-1.1.1-beta";
       src = pkgs.fetchurl {
         url = "http://downloads.us.xiph.org/releases/opus/opus-1.1.1-beta.tar.gz";
@@ -82,7 +82,7 @@
       };
     });
 
-    xdg_utils = pkgs.xdg_utils.overrideDerivation (attrs: {
+    my_xdg_utils = pkgs.xdg_utils.overrideDerivation (attrs: {
       src = pkgs.fetchgit {
         url = "http://anongit.freedesktop.org/git/xdg/xdg-utils.git";
         rev = attrs.src.rev;

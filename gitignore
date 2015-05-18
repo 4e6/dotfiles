@@ -1,5 +1,6 @@
 # sbt
-target/
+target
+retarget.sbt
 /.lib-src/
 /tags
 
