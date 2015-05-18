@@ -8,4 +8,4 @@ ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Restart=always
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
