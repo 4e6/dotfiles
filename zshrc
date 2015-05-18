@@ -25,6 +25,17 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
+# path configuration, see
+# https://wiki.archlinux.org/index.php/Zsh#Configuration_files
+typeset -U path
+path=(
+  ~/bin
+  ~/.cabal/bin
+  $(ruby -rubygems -e "puts Gem.user_dir")/bin
+  $path
+)
+
+[[ -f ~/.nix-profile/etc/profile.d/nix.sh ]] && source ~/.nix-profile/etc/profile.d/nix.sh
 [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
 [[ -f ~/.zshrc.prompt ]] && source ~/.zshrc.prompt
 [[ -f ~/.zshrc.alias ]] && source ~/.zshrc.alias
