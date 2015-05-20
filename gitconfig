@@ -1,6 +1,6 @@
-[user]
-  name = Dmitry Bushev
-  email = bushevdv@gmail.com
+# local user config, usernames, etc
+[include]
+    path = ~/.gitconfig.local
 [credential]
   helper = store
 [core]
@@ -18,15 +18,23 @@
   ss = status
   # authors with number of commits
   authors = shortlog -s
-  # stats of lines changed, expects ref to compare with
-  # example: git shortstat "@{1 week ago}"
+  # contribution by author, expected arguments
+  # $1 - author
+  authorstat = "!f() { \
+    git log --author=\"$1\" --pretty=tformat: --numstat | \
+    gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END \
+    { printf \"added lines: %s removed lines: %s total lines: %s\\n\",add,subs,loc }' - ; \
+    }; f"
+  # changes for given period, expect arguments
+  # $1 - refs to compare: "@{1 week ago}", v0.2..master
   shortstat = diff --shortstat
-  # pretty commints log
+  # graphical commits tree
   glog = log --graph --oneline --decorate
-  # pretty log with names and dates
-  namelog = log --graph --pretty=format:'%C(auto)%h %ad%d : %an %s' --date=relative
-  # list of pulled changes
+  # graphical commits tree with names and dates
+  vlog = log --graph --pretty=format:'%C(auto)%h %ad%d : %an %s' --date=relative
+  # pulled changes
   fetchlog = log ORIG_HEAD.. --stat --no-merges
+  # resolve conflicts with gui
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
 [color]
   ui = auto
