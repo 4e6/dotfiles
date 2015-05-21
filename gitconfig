@@ -16,6 +16,7 @@
 [alias]
   co = checkout
   ss = status
+  cc = commit
   # authors with number of commits
   authors = shortlog -s
   # contribution by author, expected arguments
