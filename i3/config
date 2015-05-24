@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 
 mode "launch" {
         # c, chrome
-        bindsym c exec chromium, mode "default"
+        bindsym c exec /home/dbushev/bin/chromium, mode "default"
         # e, emacsclient -c
         bindsym e exec emacsclient -c, mode "default"
 
