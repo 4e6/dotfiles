@@ -39,3 +39,7 @@
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
 [color]
   ui = auto
+[fetch]
+  prune = true
+[rebase]
+  autosquash = true
