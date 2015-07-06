@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# install pathogen and bundles
+
+PATHOGEN=https://github.com/tpope/vim-pathogen.git
+BUNDLE_DIR=~/.vim/bundle
+AUTOLOAD_DIR=~/.vim/autoload
+
+BUNDLES=(
+  https://github.com/ctrlpvim/ctrlp.vim.git
+  https://github.com/Raimondi/delimitMate.git
+  https://github.com/idris-hackers/idris-vim.git
+  https://github.com/scrooloose/nerdtree.git
+  https://github.com/scrooloose/syntastic.git
+  https://github.com/tpope/vim-sensible.git
+  https://github.com/tpope/vim-surround.git
+  https://github.com/jnurmine/Zenburn.git
+)
+
+ensure_dir () {
+  dirname=$1
+  if [ ! -d "$dirname" ]
+  then
+    mkdir -p "$dirname"
+  fi
+}
+
+install_pathogen () {
+  ensure_dir "$BUNDLE_DIR"
+  ensure_dir "$AUTOLOAD_DIR"
+
+  (cd "$BUNDLE_DIR" && git clone "$PATHOGEN") && \
+    ln "$BUNDLE_DIR/vim-pathogen/autoload/pathogen.vim" "$AUTOLOAD_DIR/pathogen.vim"
+}
+
+install_bundles () {
+  ensure_dir "$BUNDLE_DIR"
+
+  for url in "${BUNDLES[@]}"
+  do
+    echo "installing $url"
+    (cd "$BUNDLE_DIR" && git clone "$url")
+  done
+}
+
+echo "installing pathogen"
+install_pathogen
+
+echo "installing following bundles:"
+(IFS=$'\n'; echo "${BUNDLES[*]}")
+install_bundles
