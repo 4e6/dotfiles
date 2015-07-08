@@ -26,10 +26,7 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-[[ -f ~/.nix-profile/etc/profile.d/nix.sh ]] && source ~/.nix-profile/etc/profile.d/nix.sh
-[[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
-
-command -v systemctl && systemctl --user import-environment PATH
+command -v systemctl &>/dev/null && systemctl --user import-environment PATH
 
 # load other configurations
 for file in ~/.zshrc.d/*(N); do
