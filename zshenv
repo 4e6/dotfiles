@@ -1,3 +1,7 @@
+for file in ~/.zshenv.d/*(N); do
+  source "$file"
+done
+
 export TERMINAL=urxvtc
 export EDITOR=vim
 export BROWSER=chromium

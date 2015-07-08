@@ -1,7 +1,7 @@
 ### adam2 prompt theme with vcs_info feature
 # https://github.com/zsh-users/zsh/blob/master/Functions/Prompts/prompt_adam2_setup
 
-source ~/.zshrc.vcsinfo
+# source zshrc.vcsinfo
 
 prompt_adam2_help () {
   cat <<'EOF'

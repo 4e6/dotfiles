@@ -37,7 +37,10 @@ path=(
 
 [[ -f ~/.nix-profile/etc/profile.d/nix.sh ]] && source ~/.nix-profile/etc/profile.d/nix.sh
 [[ -f /usr/share/doc/pkgfile/command-not-found.zsh ]] && source /usr/share/doc/pkgfile/command-not-found.zsh
-[[ -f ~/.zshrc.prompt ]] && source ~/.zshrc.prompt
-[[ -f ~/.zshrc.alias ]] && source ~/.zshrc.alias
 
 command -v systemctl && systemctl --user import-environment PATH
+
+# load other configurations
+for file in ~/.zshrc.d/*(N); do
+  source "$file"
+done
