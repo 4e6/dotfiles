@@ -40,4 +40,4 @@ path=(
 [[ -f ~/.zshrc.prompt ]] && source ~/.zshrc.prompt
 [[ -f ~/.zshrc.alias ]] && source ~/.zshrc.alias
 
-systemctl --user import-environment PATH
+command -v systemctl && systemctl --user import-environment PATH
