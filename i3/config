@@ -149,7 +149,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-mode "launch" {
+mode "🚀" {
         # c, chrome
         bindsym c exec /home/dbushev/bin/chromium, mode "default"
         # e, emacsclient -c
@@ -158,10 +158,10 @@ mode "launch" {
         # go back to normal (if we don't launch something)
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym $mod+o mode "default"
+        bindsym $mod+backslash mode "default"
 }
 
-bindsym $mod+o mode "launch"
+bindsym $mod+backslash mode "🚀"
 
 # pass-through mode
 # disable most of i3 keybindings which may be used in other application
