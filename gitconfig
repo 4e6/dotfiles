@@ -38,6 +38,8 @@
   fetchlog = log ORIG_HEAD.. --stat --no-merges
   # resolve conflicts with gui
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+  # upstream of current branch
+  show-upstream = rev-parse --abbrev-ref @{u}
 [color]
   ui = auto
 [fetch]
