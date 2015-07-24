@@ -1,0 +1,26 @@
+# symlink cabal sandboxed projects
+
+local cabal_projects=~/projects/cabal
+local local_bin=~/bin
+
+broken_symlinks () {
+  local dir=$1
+  echo $dir/*(N-@)
+}
+
+local_cabal_executable () {
+  local project="$1"
+  local name="$2"
+  echo "$project/.cabal-sandbox/bin/$name"
+}
+
+# remove dead links from local path
+local deadlinks=$(broken_symlinks $local_bin)
+[[ -n $deadlinks ]] && rm -v $deadlinks
+
+# symlink cabal executables to local path
+for project in ~/projects/cabal/*; do
+  local name=$(basename $project)
+  local exe=$(local_cabal_executable $project $name)
+  [[ -a $local_bin/$name ]] || ln -v -s $exe $local_bin/$name
+done
