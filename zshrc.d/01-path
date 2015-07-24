@@ -21,6 +21,7 @@ local deadlinks=$(broken_symlinks $local_bin)
 # symlink cabal executables to local path
 for project in ~/projects/cabal/*(N); do
   local name=$(basename $project)
+  local symlink=$local_bin/$name
   local exe=$(local_cabal_executable $project $name)
-  [[ -a $local_bin/$name ]] || ln -v -s $exe $local_bin/$name
+  [[ ! -h $symlink ]] && [[ -x $exe ]] && ln -v -s $exe $symlink
 done
