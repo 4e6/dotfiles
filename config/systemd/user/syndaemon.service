@@ -3,7 +3,7 @@ Description=Syndaemon service
 After=dbus.service
 
 [Service]
-Environment=DISPLAY=:0
+#Environment=DISPLAY=:0
 ExecStart=/usr/bin/syndaemon -i 1.0 -t -K -R
 
 [Install]

@@ -26,7 +26,7 @@ unsetopt beep
 bindkey -e
 # End of lines configured by zsh-newuser-install
 
-command -v systemctl &>/dev/null && systemctl --user import-environment PATH
+command -v systemctl &>/dev/null && systemctl --user import-environment PATH DISPLAY
 
 # load other configurations
 for file in ~/.zshrc.d/*(N); do
