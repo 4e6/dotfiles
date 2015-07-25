@@ -2,7 +2,6 @@
 #
 # update bundles
 
-for bundle in ~/.vim/bundle/*
-do
+for bundle in ~/.vim/bundle/*(N); do
   (echo "= Updating $(basename $bundle)" && cd $bundle && git pull)
 done
