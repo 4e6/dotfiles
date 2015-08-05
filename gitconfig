@@ -1,6 +1,6 @@
 # local user config, usernames, etc
 [include]
-    path = ~/.gitconfig.local
+  path = ~/.gitconfig.local
 [credential]
   helper = store
 [core]
@@ -18,6 +18,11 @@
   cc = commit
   co = checkout
   ss = status
+  # update with upstream
+  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  # delete branches merged into specified branch
+  # $1 branch, master by default
+  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
   # authors with number of commits
   authors = shortlog -s
   # contribution by author, expected arguments
@@ -30,16 +35,23 @@
   # changes for given period, expect arguments
   # $1 - refs to compare: "@{1 week ago}", v0.2..master
   shortstat = diff --shortstat
+  ls = log --pretty=format:'%C(auto)%h%d %Cblue%cn%Creset %s' --decorate --numstat
   # graphical commits tree
-  glog = log --graph --oneline --decorate
+  ll = log --graph --oneline --decorate
   # graphical commits tree with names and dates
-  vlog = log --graph --pretty=format:'%C(auto)%h %ad%d : %an %s' --date=relative
+  la = log --graph --pretty=format:'%C(auto)%h %ad%d %Cblue%an%Creset %s' --date=relative
+  # changes in file
+  lf = log -u
   # pulled changes
   fetchlog = log ORIG_HEAD.. --stat --no-merges
   # resolve conflicts with gui
   gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
   # upstream of current branch
   show-upstream = rev-parse --abbrev-ref @{u}
+  # wipe unsaved changes
+  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+  # reset to upstream
+  reset-upstream = "!f() { git reset --hard $(git show-upstream); }; f"
 [color]
   ui = auto
 [fetch]
