@@ -19,7 +19,7 @@
   co = checkout
   ss = status
   # update with upstream
-  up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+  up = !git pull --summary --rebase --prune $@ && git submodule update --init --recursive
   # delete branches merged into specified branch
   # $1 branch, master by default
   bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
