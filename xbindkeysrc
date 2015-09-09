@@ -5,10 +5,10 @@
 
 "amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
   XF86AudioLowerVolume
-"amixer -c 0 set Master 1dB+ unmute && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
+"amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
   XF86AudioRaiseVolume
 
-"amixer -c 0 set Master toggle"
+"amixer -D pulse set Master toggle"
   XF86AudioMute
 
 "i3lock -c 3f3f3f && xset dpms force off"
