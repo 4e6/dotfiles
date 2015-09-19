@@ -8,6 +8,7 @@ zmodload zsh/mapfile
 local cabal_projects=~/projects/cabal
 local local_bin=~/bin
 
+# space separated list of filenames
 broken_symlinks () {
   local dir=$1
   echo $dir/*(N-@)
@@ -26,8 +27,8 @@ local_make_symlink () {
 }
 
 # remove dead links from local path
-local deadlinks=$(broken_symlinks $local_bin)
-[[ -n $deadlinks ]] && rm -v $deadlinks
+local -a deadlinks=( $(broken_symlinks $local_bin) )
+[[ ${#deadlinks[@]} -ne 0 ]] && rm -v "${deadlinks[@]}"
 
 # symlink cabal executables to local path
 for project in ~/projects/cabal/*(N); do
