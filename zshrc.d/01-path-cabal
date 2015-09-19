@@ -1,12 +1,12 @@
-## symlink cabal sandboxed projects
+## symlink cabal sandboxed packages
 #
-# file `cabal_projects/project_name/links` list executables that should be
-# linked to `local_bin`, if not exists `project_name` will be used as fallback
+# file `cabal_packages/package_name/links` list executables that should be
+# linked to `local_bin`, if not exists `package_name` will be used as fallback
 
 zmodload zsh/mapfile
 
-local cabal_projects=~/projects/cabal
-local local_bin=~/bin
+local -r cabal_packages=~/projects/cabal
+local -r local_bin=~/bin
 
 # space separated list of filenames
 broken_symlinks () {
@@ -14,34 +14,38 @@ broken_symlinks () {
   echo $dir/*(N-@)
 }
 
+# make path for cabal executable
 local_cabal_executable () {
-  local project="$1"
-  local name="$2"
-  echo "$project/.cabal-sandbox/bin/$name"
+  local -r package="$1"
+  local -r name="$2"
+  echo "$package/.cabal-sandbox/bin/$name"
 }
 
+# symlink `filename` to `linkname` if
+# `filename` is executable and
+# `linkname` not exist
 local_make_symlink () {
-  local filename=$1
-  local linkname=$2
-  [[ ! -h $linkname ]] && [[ -x $filename ]] && ln -v -s $filename $linkname
+  local -r filename=$1
+  local -r linkname=$2
+  [[ ! -h $linkname ]] && [[ -x $filename ]] && ln -v -s "$filename" "$linkname"
 }
 
-# remove dead links from local path
+# remove dead links from `local_bin` path
 local -a deadlinks=( $(broken_symlinks $local_bin) )
 [[ ${#deadlinks[@]} -ne 0 ]] && rm -v "${deadlinks[@]}"
 
-# symlink cabal executables to local path
-for project in ~/projects/cabal/*(N); do
+# symlink cabal executables to `local_bin` path
+for package in $cabal_packages/*(N); do
   local -a filenames
-  if [[ -f "$project/links" ]]; then
-    filenames=("${(f@)mapfile[$project/links]}")
+  if [[ -f "$package/links" ]]; then
+    filenames=( "${(f@)mapfile[$package/links]}" )
   else
-    filenames=("$(basename $project)")
+    filenames=( "$(basename $package)" )
   fi
 
   for filename in $filenames; do
     local symlink=$local_bin/$filename
-    local exe=$(local_cabal_executable $project $filename)
-    local_make_symlink $exe $symlink
+    local exe=$(local_cabal_executable "$package" "$filename")
+    local_make_symlink "$exe" "$symlink"
   done
 done
