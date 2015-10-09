@@ -29,8 +29,8 @@ URxvt.keysym.M-Escape:    perl:keyboard-select:activate
 URxvt.keysym.M-s:         perl:keyboard-select:search
 
 ! Appearance
-URxvt*font:               xft:Ubuntu Mono:size=8
-URxvt*boldFont:           xft:Ubuntu Mono:bold:size=8
+URxvt*font:               xft:Input Mono Compressed:style=light:size=8
+URxvt*boldFont:           xft:Input Mono Compressed:bold:style=light:size=8
 URxvt.depth:              32
 URxvt.transparent:        false
 URxvt.fading:             0
@@ -78,14 +78,12 @@ xterm*highlightSelection: true
 xterm*utf8:               2
 xterm*eightBitInput:      true
 xterm*metaSendsEscape:    true
-!xterm*font:               -xos4-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-2
-!xterm*boldFont:           -xos4-terminus-bold-*-*-*-14-*-*-*-*-*-iso8859-2
-xterm*faceName:           Ubuntu Mono
+xterm*faceName:           Ubuntu Mono Compressed
 xterm*faceSize:           8
 xterm*cursorColor:        #DCDCCC
 
 ! Emacs
-Emacs.font:               Ubuntu Mono 8
+Emacs.font:               Input Sans Compressed 8
 
 ! Zenburn
 xterm*background:         #3f3f3f
