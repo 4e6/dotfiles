@@ -22,3 +22,6 @@
 (require 'prelude-shell)
 (require 'prelude-xml)
 (require 'prelude-yaml)
+
+;;; Helm settings
+(setq helm-M-x-fuzzy-match t)
