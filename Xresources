@@ -6,7 +6,7 @@ Xft.dpi:                  210
 Xft.antialias:            true
 Xft.rgba:                 rgb
 Xft.hinting:              true
-Xft.hintstyle:            hintmedium
+Xft.hintstyle:            hintnone
 
 !
 ! URxvt settings
