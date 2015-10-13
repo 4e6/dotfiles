@@ -212,6 +212,30 @@ workspace_auto_back_and_forth yes
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        output eDP1
+        status_command i3status -c ~/.i3/i3status.conf
+
+        colors {
+                background         #0F0F0F
+                statusline         #F5DEB3
+                focused_workspace  #F5DEB3 #666666
+                active_workspace   #F5DEB3 #0F0F0F
+                inactive_workspace #F5DEB3 #1E1E1E
+                urgent_workspace   #ffffff #900000
+        }
+}
+
+# Hide i3bar on external monitors
+bar {
+        output DP1
+        output DP2
+        output HDMI1
+        output HDMI2
+
+        mode hide
+        hidden_state hide
+        modifier Mod4
+
         status_command i3status -c ~/.i3/i3status.conf
 
         colors {
