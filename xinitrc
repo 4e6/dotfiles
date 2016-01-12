@@ -13,7 +13,7 @@ fi
 
 # settings
 setxkbmap -layout us,ru -variant ,phonetic -option grp:shift_toggle,grp_led:scroll
-xset r rate 190 30
+xset r rate 200 30
 xset -dpms
 xset s off
 xset -b # disable beep
