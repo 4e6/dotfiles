@@ -16,7 +16,11 @@ zstyle ':completion:*' menu select
 
 autoload -Uz compinit
 compinit
+
 autoload -U zmv
+
+autoload -U edit-command-line
+zle -N edit-command-line
 
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -24,6 +28,7 @@ SAVEHIST=1000
 setopt autocd hist_ignore_dups
 unsetopt beep
 bindkey -e
+bindkey '^x^e' edit-command-line
 # End of lines configured by zsh-newuser-install
 
 # load other configurations
