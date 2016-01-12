@@ -248,6 +248,11 @@ bar {
         }
 }
 
+# don't warp cursor while switching windows
+mouse_warping none
+
+for_window [title="nucl.ai"] floating enable
+
 # Autostart
 assign [title="^htop$"] → 10
 exec urxvtc -title htop -e htop
