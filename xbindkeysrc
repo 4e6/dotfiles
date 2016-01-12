@@ -9,9 +9,9 @@
   XF86AudioRaiseVolume
 
 "amixer -c 0 set Master 1dB-"
-  control+XF86AudioLowerVolume
+  Control+XF86AudioLowerVolume
 "amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute"
-  control+XF86AudioRaiseVolume
+  Control+XF86AudioRaiseVolume
 
 "amixer -D pulse set Master toggle"
   XF86AudioMute
@@ -20,4 +20,4 @@
   XF86Display
 
 "i3lock -c 3f3f3f"
-  control+alt + l
+  Control+Alt + l
