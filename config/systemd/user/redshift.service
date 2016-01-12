@@ -8,4 +8,4 @@ ExecStart=/usr/bin/redshift
 Restart=always
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
