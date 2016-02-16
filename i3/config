@@ -254,8 +254,8 @@ mouse_warping none
 for_window [title="nucl.ai"] floating enable
 
 # Autostart
-assign [title="^htop$"] → 10
-exec urxvtc -title htop -e htop
+assign [title="^top$"] → 10
+exec urxvtc -title top -e top
 
 assign [title="^wifi$"] → 10
 exec urxvtc -title wifi -e sh -c 'sudo wifi-menu'
