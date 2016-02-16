@@ -5,7 +5,6 @@
 (add-hook 'scala-mode-hook
           '(lambda ()
              (setq scala-indent:use-javadoc-style t
-                   scala-indent:align-parameters t
                    sbt:prefer-nested-projects t)
 
              ;; sbt-find-definitions is a command that tries to find (with grep)
