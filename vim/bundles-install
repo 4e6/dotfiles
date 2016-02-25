@@ -12,6 +12,7 @@ BUNDLES=(
   https://github.com/idris-hackers/idris-vim.git
   https://github.com/scrooloose/nerdtree.git
   https://github.com/scrooloose/syntastic.git
+  https://github.com/LnL7/vim-nix.git
   https://github.com/tpope/vim-sensible.git
   https://github.com/tpope/vim-surround.git
   https://github.com/jnurmine/Zenburn.git
