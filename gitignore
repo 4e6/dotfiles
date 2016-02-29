@@ -21,5 +21,6 @@ flycheck*.ensime
 /.idea
 
 # misc
+TAGS
 /logs
 /.local/
