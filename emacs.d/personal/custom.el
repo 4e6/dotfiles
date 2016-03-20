@@ -4,6 +4,10 @@
 
 (require 'transpose-frame)
 
+(add-hook 'java-mode-hook
+          (lambda ()
+            (setq c-basic-offset 2)))
+
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
 ;;   face tab removed and tab-mark added
