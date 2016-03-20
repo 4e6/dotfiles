@@ -50,7 +50,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
   " Use location list for errors
   let g:syntastic_always_populate_loc_list = 1
-  " Do not oupen location list window
+  " Do not open location list window
   let g:syntastic_auto_loc_list = 0
   let g:syntastic_check_on_open = 1
   let g:syntastic_check_on_wq = 0
