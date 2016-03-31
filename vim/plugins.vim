@@ -56,7 +56,7 @@ Plug 'scrooloose/syntastic'
   let g:syntastic_check_on_wq = 0
 
   " Filetypes not checked on open
-  au FileType scala let b:syntastic_mode = "passive"
+  au FileType scala,sbt.scala let b:syntastic_mode = "passive"
 
   " Check file
   nnoremap <Leader>ee :SyntasticCheck<CR>
