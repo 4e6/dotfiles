@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# Cleanup sbt generated files
+
+rm -rv target ./*/target project/project

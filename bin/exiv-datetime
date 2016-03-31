@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#
+# Set EXIF DateTime property based on image file name
+
+file=$1
+filename=$(basename -s .jpeg "$file")
+# construct pattern 'YYYY-mm-dd-HH-MM-SS'
+pattern='^([[:digit:]]{4})'
+for _ in {1..5}; do
+  pattern+='-([[:digit:]]{2})'
+done
+pattern+='$'
+
+# match pattern
+[[ $filename =~ $pattern ]]
+read -r _ Y m d H M S <<< "${BASH_REMATCH[@]}"
+
+EXIF_DATETIME="$Y-$m-$d $H:$M:$S"
+
+exiv2 -M"set Exif.Image.DateTime $EXIF_DATETIME" "$file"

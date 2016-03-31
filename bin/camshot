@@ -1,0 +1,26 @@
+#!/bin/sh
+#
+# take a shot from integrated camera
+
+LID_STATE=$(cat /proc/acpi/button/lid/LID/state)
+
+if test "${LID_STATE#*closed}" != "$LID_STATE"
+then
+  echo "lid is closed, skipping"
+  exit 0
+fi
+
+YEAR=$(date +'%Y')
+MONTH=$(date +'%m')
+DAY=$(date +'%d')
+FILE_DATETIME=$(date +'%F-%H-%M-%S')
+EXIF_DATETIME=$(date +'%Y:%m:%d %H:%M:%S')
+
+OUT_DIR=$HOME/docs/cam/$YEAR/$MONTH/$DAY
+OUT_FILE="$FILE_DATETIME.jpeg"
+OUT="$OUT_DIR/$OUT_FILE"
+
+mkdir -p "$OUT_DIR"
+
+ffmpeg -f v4l2 -video_size 1280x720 -i /dev/video0 -vframes 1 "$OUT"
+exiv2 -M"set Exif.Image.DateTime $EXIF_DATETIME" "$OUT"
