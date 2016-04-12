@@ -52,6 +52,9 @@
   wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
   # reset to upstream
   reset-upstream = "!f() { git reset --hard $(git show-upstream); }; f"
+  # add non-whitespace changes (whitespace=fix should deal with patch errors)
+  addw = "!f() { git diff -w $@ | git apply -v --cached --ignore-whitespace; }; f"
+  addwf = "!f() { git diff -w $@ | git apply -v --cached --whitespace=fix; }; f"
 [color]
   ui = auto
 [fetch]
