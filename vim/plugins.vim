@@ -25,11 +25,11 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]\.(git|hg|svn)$',
+    \ 'dir': '\v[\/](\.(git|hg|svn)$)|(target$)',
     \ 'file': '\v\.(class|so)',
     \ }
   " Use the nearest .git directory as the cwd
-  let g:ctrlp_working_path_mode = 'r'
+  "let g:ctrlp_working_path_mode = 'r'
   " Open file menu
   let g:ctrlp_map = '<Leader>pf'
   " Open buffers
