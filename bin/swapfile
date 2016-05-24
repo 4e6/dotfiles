@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+
+set -e
+
+declare -r SWAPFILE=/swapfile
+
+usage() {
+  cat << EOF
+Usage:
+ swapfile <size>|off
+
+Allocate /swapfile of <size> and swapon. off to swapoff and remove swapfile.
+
+Options:
+ <size> in bytes, support suffixes like K, M, G; see fallocate(1) --length
+EOF
+}
+
+swapfileoff() {
+  swapoff $SWAPFILE
+  rm $SWAPFILE
+}
+
+swapfileon() {
+  fallocate --length "$1" $SWAPFILE
+  chmod 600 $SWAPFILE
+  mkswap $SWAPFILE
+  # discard option may improve performance on SSDs; see swapon(8)
+  swapon --discard $SWAPFILE
+}
+
+case $1 in
+  '-h'|'--help'|'')
+    usage
+    ;;
+  off)
+    swapfileoff
+    ;;
+  *)
+    swapfileon "$1"
+    ;;
+esac
