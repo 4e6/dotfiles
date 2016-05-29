@@ -36,7 +36,7 @@
   # $1 - refs to compare: "@{1 week ago}", v0.2..master
   shortstat = diff --shortstat
   # count lines of code
-  loc = "!f() { git ls-files | grep \"$1\" | xargs wc -l; }; f"
+  loc = "!f() { git ls-files | grep \"$@\" | xargs wc -l; }; f"
   ls = log --pretty=format:'%C(auto)%h%d %Cblue%cn%Creset %s' --decorate --numstat
   # graphical commits tree
   ll = log --graph --oneline --decorate
