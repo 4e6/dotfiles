@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+#
+# parallel top
+#
+# Each `top` return process with header. `awk` then remove duplicated lines by
+# checking column $2 (PID) but leaving numeric values (in cases when top return
+# processes with same pids)
+#
+#  http://stackoverflow.com/questions/1444406/how-can-i-delete-duplicate-lines-in-a-file-in-unix
+#  http://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash
+
+usage() {
+  cat << EOF
+Usage: ptop [option] host...
+Get top process of remote hosts to see cluster utilization.
+
+  -n, --lines NUM   number of top processes
+  --help            print this message and exit
+
+Examples:
+  ptop -n 5 lite01
+  ptop k9-0{1..9}
+EOF
+}
+
+declare -i TOP_LINES=1
+
+while [[ $# > 0 ]]; do
+  key="$1"
+  case $key in
+    --debug)
+      DEBUG=1
+      ;;
+    --help)
+      usage
+      exit 0
+      ;;
+    -n|--lines)
+      TOP_LINES="$2"
+      [ $TOP_LINES -lt 0 ] && TOP_LINES=0
+      shift
+      ;;
+    *)
+      break # keep arguments
+      ;;
+  esac
+  shift # past argument
+done
+
+[ -n "$DEBUG" ] && set -x
+
+declare -a ARGS=( "$@" )
+declare -a HOSTS=( "${ARGS[@]/#/-S}" )
+
+declare -r TOP_HEAD_LINES="top -bn1 | head -n$((7+$TOP_LINES))  | tail -n$((1+$TOP_LINES))"
+declare -r AWK_FILTER_DUPLICATES='!a[$2]++ || $2 ~ "[0-9]+"'
+
+exec parallel --tag --nonall --keep-order "${HOSTS[@]}" "$TOP_HEAD_LINES" | awk "$AWK_FILTER_DUPLICATES"
