@@ -37,4 +37,4 @@ for file in ~/.zshrc.d/*(N); do
 done
 unset file
 
-command -v systemctl &>/dev/null && systemctl --user import-environment PATH DISPLAY XDG_VTNR
+command -v systemctl &>/dev/null && systemctl --user import-environment PATH DISPLAY XDG_VTNR DBUS_SESSION_BUS_ADDRESS NO_AT_BRIDGE

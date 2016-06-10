@@ -8,3 +8,5 @@ export VISUAL=nvim
 export BROWSER=chromium
 export FILE_MANAGER_APP='urxvtc -e ranger'
 export VIDEO_APP='urxvtc -e mplayer'
+
+export NO_AT_BRIDGE=1
