@@ -1,0 +1,60 @@
+#!/usr/bin/env sh
+
+usage() {
+  cat << EOF
+Usage:
+  metronome [options] [bpm]
+
+Start metronome with given beats per minute rate.
+
+Options:
+ --help    print this message and exit
+ --verbose enable debug output
+EOF
+}
+
+play_pad() {
+  local -r bpm=$1
+  echo "60/$bpm" | bc -l
+}
+
+play_delay() {
+  local -r channel=$1
+  local -r pad=$2
+  echo "$channel*$pad" | bc -l
+}
+
+while [ $# -gt 0 ]; do
+  key="$1"
+  case $key in
+    --verbose)
+      DEBUG=1
+      ;;
+    --help)
+      usage
+      exit 0
+      ;;
+    *)
+      break # keep arguments
+      ;;
+  esac
+  shift # past argument
+done
+
+BPM=${1:-60}
+PAD="$(play_pad "$BPM")"
+DELAY0="$(play_delay 0 "$PAD")"
+DELAY1="$(play_delay 1 "$PAD")"
+DELAY2="$(play_delay 2 "$PAD")"
+DELAY3="$(play_delay 3 "$PAD")"
+
+TICK=1500
+TACK=1000
+
+[ -n "$DEBUG" ] && set -x
+
+play -n -c1 \
+  synth 0.001 sin $TICK sin $TACK sin $TACK sin $TACK \
+  pad "$PAD" \
+  delay "$DELAY0" "$DELAY1" "$DELAY2" "$DELAY3" \
+  repeat -
