@@ -214,6 +214,7 @@ workspace_auto_back_and_forth yes
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        output eDP-1
         output eDP1
         status_command i3status -c ~/.i3/i3status.conf
 
@@ -229,10 +230,10 @@ bar {
 
 # Hide i3bar on external monitors
 bar {
-        output DP1
-        output DP2
-        output HDMI1
-        output HDMI2
+        output DP-1
+        output DP-2
+        output HDMI-1
+        output HDMI-2
 
         mode hide
         hidden_state hide
@@ -256,10 +257,12 @@ mouse_warping none
 for_window [title="nucl.ai"] floating enable
 
 # Autostart
-assign [title="^top$"] → 10
-exec urxvtc -title top -e top
+exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.i3/workspace-10.json'"
 
-assign [title="^wifi$"] → 10
-exec urxvtc -title wifi -e sh -c 'sudo wifi-menu'
+exec urxvtc -title top -e top
+exec urxvtc -title journalctl -e journalctl -f
+exec urxvtc -title hello
+#exec urxvtc -title wifi -e sh -c 'sudo wifi-menu'
+exec urxvtc -title 'netctl switch-to home' -e sh -c 'sudo netctl switch-to home'
 
 exec i3lock -c 3f3f3f
