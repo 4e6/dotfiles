@@ -1,7 +1,11 @@
-"xbacklight -dec 10"
+"light -U 10"
   XF86MonBrightnessDown
-"xbacklight -inc 10"
+"light -U 2"
+  Control+XF86MonBrightnessDown
+"light -A 10"
   XF86MonBrightnessUp
+"light -A 2"
+  Control+XF86MonBrightnessUp
 
 "amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
   XF86AudioLowerVolume
