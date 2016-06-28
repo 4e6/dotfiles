@@ -1,8 +1,6 @@
 ### adam2 prompt theme with vcs_info feature
 # https://github.com/zsh-users/zsh/blob/master/Functions/Prompts/prompt_adam2_setup
 
-# source zshrc.vcsinfo
-
 prompt_adam2_help () {
   cat <<'EOF'
 This prompt is color-scheme-able.  You can invoke it thus:
@@ -54,7 +52,7 @@ prompt_adam2_setup () {
   prompt_adam2_color3=${3:-'cyan'}    # user@host
   prompt_adam2_color4=${4:-'white'}   # user input
 
-  local prompt_gfx_bbox 
+  local prompt_gfx_bbox
   prompt_gfx_tbox="%B%F{$prompt_adam2_color1}${prompt_gfx_tlc}%b%F{$prompt_adam2_color1}${prompt_gfx_hyphen}"
   prompt_gfx_bbox="%B%F{$prompt_adam2_color1}${prompt_gfx_blc}${prompt_gfx_hyphen}%b%F{$prompt_adam2_color1}"
 
@@ -95,7 +93,7 @@ prompt_adam2_precmd() {
 prompt_adam2_choose_prompt () {
   local prompt_line_1a_width=${#${(S%%)prompt_line_1a//(\%([KF1]|)\{*\}|\%[Bbkf])}}
   local prompt_line_1b_width=${#${(S%%)prompt_line_1b//(\%([KF1]|)\{*\}|\%[Bbkf])}}
-  
+
   local prompt_padding_size=$(( COLUMNS
                                   - prompt_line_1a_width
                                   - prompt_line_1b_width ))
@@ -118,7 +116,7 @@ prompt_adam2_choose_prompt () {
     return
   fi
 
-  # Still didn't fit; truncate 
+  # Still didn't fit; truncate
   local prompt_pwd_size=$(( COLUMNS - 5 ))
   prompt_line_1="$prompt_gfx_tbox$prompt_l_paren%B%F{$prompt_adam2_color2}%$prompt_pwd_size<...<%~%<<$prompt_r_paren%b%F{$prompt_adam2_color1}$prompt_gfx_hyphen"
 }

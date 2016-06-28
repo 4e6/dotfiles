@@ -1,3 +1,12 @@
+(prelude-require-package 'org)
+
+(add-hook 'org-mode-hook
+          '(lambda ()
+             ;; column width
+             (set-fill-column 80)
+             ;; turn on auto-fill-mode
+             (turn-on-auto-fill)))
+
 (require 'ox-latex)
 (setq org-latex-listings t)
 

@@ -18,25 +18,16 @@ compdef ll=ls la=ls
 # docker
 
 docker() {
-  case $* in
+  case "$@" in
     inspect* ) shift; docker_inspect "$@" ;;
     * ) command docker "$@" ;;
   esac
 }
 
 docker_inspect() {
-  case $* in
+  case "$@" in
     ip* ) shift; command docker inspect --format '{{ .NetworkSettings.IPAddress }}' "$@" ;;
     pid* ) shift; command docker inspect --format '{{ .State.Pid }}' "$@" ;;
     * ) command docker inspect "$@" ;;
   esac
-}
-
-# git
-
-# contribution by author
-git-authorstat() {
-  git log --author="$1" --pretty=tformat: --numstat | \
-    gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END \
-    { printf "added lines: %s removed lines: %s total lines: %s\n",add,subs,loc }' -
 }

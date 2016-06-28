@@ -1,12 +1,8 @@
 #!/bin/sh
-#
-# take a shot from integrated camera
 
 LID_STATE=$(cat /proc/acpi/button/lid/LID/state)
 
-if test "${LID_STATE#*closed}" != "$LID_STATE"
-then
-  echo "lid is closed, skipping"
+if test "${LID_STATE#*closed}" != "$LID_STATE"; then
   exit 0
 fi
 

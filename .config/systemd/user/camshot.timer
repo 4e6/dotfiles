@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer for camshot service
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=3min
+
+[Install]
+WantedBy=timers.target

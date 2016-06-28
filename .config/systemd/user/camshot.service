@@ -1,0 +1,6 @@
+[Unit]
+Description=Take a screenshot
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c %h/bin/camshot
