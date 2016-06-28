@@ -24,6 +24,11 @@ play_delay() {
   echo "$channel*$pad" | bc -l
 }
 
+enable_debug() {
+  local -r debug=$1
+  [ -n "$debug" ] && set -x
+}
+
 while [ $# -gt 0 ]; do
   key="$1"
   case $key in
@@ -49,12 +54,12 @@ DELAY2="$(play_delay 2 "$PAD")"
 DELAY3="$(play_delay 3 "$PAD")"
 
 TICK=1500
-TACK=1000
+TOCK=1000
 
-[ -n "$DEBUG" ] && set -x
+enable_debug $DEBUG
 
 play -n -c1 \
-  synth 0.001 sin $TICK sin $TACK sin $TACK sin $TACK \
+  synth 0.001 sin $TICK sin $TOCK sin $TOCK sin $TOCK \
   pad "$PAD" \
   delay "$DELAY0" "$DELAY1" "$DELAY2" "$DELAY3" \
   repeat -
