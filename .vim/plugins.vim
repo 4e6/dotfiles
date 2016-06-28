@@ -3,9 +3,10 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'rking/ag.vim'
-  " Search in project (nearest .git) directory
-  let g:ag_working_path_mode="r"
+Plug 'mileszs/ack.vim'
+  if executable('ag')
+    let g:ackprg = 'ag --vimgrep --smart-case'
+  endif
 
 Plug 'derekelkins/agda-vim'
 
