@@ -5,7 +5,7 @@
   helper = store
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore.global
 [merge]
   tool = vimdiff
   conflictstyle = diff3
