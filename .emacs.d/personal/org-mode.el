@@ -1,4 +1,4 @@
-(prelude-require-package 'org)
+(prelude-require-package 'ob-ipython)
 
 (add-hook 'org-mode-hook
           '(lambda ()
@@ -7,10 +7,15 @@
              ;; turn on auto-fill-mode
              (turn-on-auto-fill)))
 
+;;; IPython
+(require 'ob-ipython)
+;; don't confirm code block evaluation
+(setq org-confirm-babel-evaluate nil)
+
 (require 'ox-latex)
 (setq org-latex-listings t)
 
-;;; XeLaTeX customisations
+;;; XeLaTeX
 ;; remove "inputenc" from default packages as it clashes with xelatex
 (setf org-latex-default-packages-alist
       (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
