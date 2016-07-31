@@ -7,9 +7,9 @@
 "light -A 2"
   Control+XF86MonBrightnessUp
 
-"amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
+"amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
   XF86AudioLowerVolume
-"amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute && ps -e | grep mplayer || mplayer .local/mac-os-x-10.5-leopard/sounds/Open.wav"
+"amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
   XF86AudioRaiseVolume
 
 "amixer -c 0 set Master 1dB-"
