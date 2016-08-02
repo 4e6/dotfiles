@@ -11,6 +11,8 @@
 (require 'ob-ipython)
 ;; don't confirm code block evaluation
 (setq org-confirm-babel-evaluate nil)
+;; display/update images in the buffer after I evaluate
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
 
 (require 'ox-latex)
 (setq org-latex-listings t)
