@@ -48,29 +48,36 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'scrooloose/nerdcommenter'
 
-Plug 'scrooloose/syntastic'
-  " Use location list for errors
-  let g:syntastic_always_populate_loc_list = 1
-  " Do not open location list window
-  let g:syntastic_auto_loc_list = 0
-  let g:syntastic_check_on_open = 1
-  let g:syntastic_check_on_wq = 0
+if has('nvim')
+  Plug 'neomake/neomake'
+    let g:neomake_open_list = 2
+    " let g:neomake_logfile = '/tmp/neomake_logfile.log'
+    " autocmd! BufWritePost,BufEnter * Neomake
+else
+  Plug 'scrooloose/syntastic'
+    " Use location list for errors
+    let g:syntastic_always_populate_loc_list = 1
+    " Do not open location list window
+    let g:syntastic_auto_loc_list = 0
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
 
-  " Filetypes not checked on open
-  au FileType scala,sbt.scala let b:syntastic_mode = "passive"
+    " Filetypes not checked on open
+    au FileType scala,sbt.scala let b:syntastic_mode = "passive"
 
-  " Check file
-  nnoremap <Leader>ee :SyntasticCheck<CR>
+    " Check file
+    nnoremap <Leader>ee :SyntasticCheck<CR>
 
-  " Open/Close location list window
-  nnoremap <Leader>eo :lopen<CR>
-  nnoremap <Leader>ec :lclose<CR>
+    " Open/Close location list window
+    nnoremap <Leader>eo :lopen<CR>
+    nnoremap <Leader>ec :lclose<CR>
 
-  " Jump between errors
-  nnoremap <Leader>gn :lnext<CR>
-  nnoremap <Leader>gp :lprev<CR>
-  nnoremap <Leader>gf :lfirst<CR>
-  nnoremap <Leader>gl :llast<CR>
+    " Jump between errors
+    nnoremap <Leader>gn :lnext<CR>
+    nnoremap <Leader>gp :lprev<CR>
+    nnoremap <Leader>gf :lfirst<CR>
+    nnoremap <Leader>gl :llast<CR>
+endif
 
 Plug 'jeetsukumaran/vim-buffergator'
 
