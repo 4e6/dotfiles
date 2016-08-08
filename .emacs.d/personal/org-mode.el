@@ -7,6 +7,10 @@
              ;; turn on auto-fill-mode
              (turn-on-auto-fill)))
 
+;;; Org-src
+;; syntax highlighting in src blocks
+(setq org-src-fontify-natively t)
+
 ;;; IPython
 (require 'ob-ipython)
 ;; don't confirm code block evaluation
