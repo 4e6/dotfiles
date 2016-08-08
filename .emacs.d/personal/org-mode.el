@@ -10,6 +10,9 @@
 ;;; Org-src
 ;; syntax highlighting in src blocks
 (setq org-src-fontify-natively t)
+;; TAB acts in code block as if it was issued in the language major mode buffer,
+;; affects indentation and stuff
+(setq org-src-tab-acts-natively t)
 
 ;;; IPython
 (require 'ob-ipython)
