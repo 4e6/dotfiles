@@ -50,9 +50,9 @@ Plug 'scrooloose/nerdcommenter'
 
 if has('nvim')
   Plug 'neomake/neomake'
-    let g:neomake_open_list = 2
+    " let g:neomake_open_list = 2
     " let g:neomake_logfile = '/tmp/neomake_logfile.log'
-    " autocmd! BufWritePost,BufEnter * Neomake
+    autocmd! BufWritePost,BufEnter * Neomake
 else
   Plug 'scrooloose/syntastic'
     " Use location list for errors
