@@ -16,7 +16,7 @@
 (require 'prelude-latex)
 (require 'prelude-lisp)
 (require 'prelude-ocaml)
-(require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
+;(require 'prelude-org) ;; Org-mode helps you keep TODO lists, notes and more
 (require 'prelude-python)
 (require 'prelude-scala)
 (require 'prelude-shell)

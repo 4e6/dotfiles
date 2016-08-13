@@ -1,4 +1,4 @@
-(prelude-require-package 'ob-ipython)
+(prelude-require-packages '(org ob-ipython ox-gfm))
 
 (add-hook 'org-mode-hook
           '(lambda ()
@@ -6,6 +6,10 @@
              (set-fill-column 80)
              ;; turn on auto-fill-mode
              (turn-on-auto-fill)))
+
+;;; Export
+;; enable export to github-flawored-markdown
+(require 'ox-gfm)
 
 ;;; Babel
 (require 'ob-rust)
