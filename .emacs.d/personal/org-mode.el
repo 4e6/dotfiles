@@ -7,12 +7,18 @@
              ;; turn on auto-fill-mode
              (turn-on-auto-fill)))
 
-;;; Org-src
+;;; Babel
+(require 'ob-rust)
 ;; syntax highlighting in src blocks
 (setq org-src-fontify-natively t)
 ;; TAB acts in code block as if it was issued in the language major mode buffer,
 ;; affects indentation and stuff
 (setq org-src-tab-acts-natively t)
+;; load languages
+(org-babel-do-load-languages 'org-babel-load-languages
+                             '((emacs-lisp . t)
+                               (rust . t)
+                               (sh . t)))
 
 ;;; IPython
 (require 'ob-ipython)
@@ -21,6 +27,7 @@
 ;; display/update images in the buffer after I evaluate
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
 
+;;; LaTeX
 (require 'ox-latex)
 (setq org-latex-listings t)
 
