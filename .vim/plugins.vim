@@ -85,6 +85,8 @@ Plug 'terryma/vim-expand-region'
 
 Plug 'LnL7/vim-nix'
 
+Plug 'rust-lang/rust.vim'
+
 Plug 'derekwyatt/vim-scala'
 
 Plug 'tpope/vim-sensible'
