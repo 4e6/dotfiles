@@ -254,6 +254,11 @@ bar {
 # don't warp cursor while switching windows
 mouse_warping none
 
+# Headless windows
+new_float normal
+new_window pixel 1
+hide_edge_borders smart
+
 for_window [title="nucl.ai"] floating enable
 
 # Autostart
