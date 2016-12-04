@@ -28,6 +28,7 @@
 !/.config/
 /.config/*
 !/.config/fontconfig/
+!/.config/mpv/
 !/.config/nvim/
 !/.config/redshift.conf
 !/.config/systemd/
