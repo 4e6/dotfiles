@@ -6,6 +6,10 @@
   XF86MonBrightnessUp
 "light -A 2"
   Control+XF86MonBrightnessUp
+"light -S 0.2"
+  Control+Shift+XF86MonBrightnessDown
+"light -S 100"
+  Control+Shift+XF86MonBrightnessUp
 
 "amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
   XF86AudioLowerVolume
