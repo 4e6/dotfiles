@@ -23,7 +23,7 @@
 -- paused_for_cache_timer_interval=1
 
 -- # time in seconds to wait until reload
--- paused_for_cache_timeout=10
+-- paused_for_cache_timer_timeout=10
 --
 -- # keybinding to reload stream from current time position
 -- # you can disable keybinding by setting it to empty value
