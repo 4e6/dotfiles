@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#
+
+usage() {
+  cat << EOF
+Usage:
+ nosleep
+
+Inhibit lid actions to prevent sleep
+EOF
+}
+
+inhibit-lid-switch () {
+  local duration="$1"
+  exec systemd-inhibit \
+    --what=handle-lid-switch \
+    --why='nosleep' \
+    sleep "$duration"
+}
+
+case $1 in
+  '-h'|'--help')
+    usage
+    ;;
+  *)
+    inhibit-lid-switch 1d
+    ;;
+esac
