@@ -24,6 +24,8 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline_right_alt_sep = '|'
   let g:airline_theme= 'zenburn'
 
+Plug 'qpkorr/vim-bufkill'
+
 Plug 'ctrlpvim/ctrlp.vim'
   let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/](\.(git|hg|svn)$)|(target$)',
