@@ -27,6 +27,7 @@ HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd hist_ignore_dups
 unsetopt beep
+unsetopt nomatch
 bindkey -e
 bindkey '^x^e' edit-command-line
 # End of lines configured by zsh-newuser-install
