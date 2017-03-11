@@ -6,7 +6,7 @@
 zmodload zsh/mapfile
 
 local -r cabal_packages=~/projects/cabal
-local -r local_bin=~/bin
+local -r local_bin=~/.local/bin
 
 # space separated list of filenames
 broken_symlinks () {
