@@ -39,4 +39,4 @@ local/fonts-meta-extended-lt 2-2
 
 ## Screenshots
 
-![layout](screenshots/screenFetch-2017-03-11_19-24-59.png)
+![layout](screenshots/screenFetch-2017-03-11_19-50-29.png)
