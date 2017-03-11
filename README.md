@@ -15,7 +15,7 @@ dotfiles
            `/++++++++++++++:           WM: i3
           `/+++ooooooooooooo/`         GTK Theme: Paper [GTK2/3]
          ./ooosssso++osssssso+`        Icon Theme: Paper
-        .oossssso-````/ossssss+`       Font: Ubuntu 8
+        .oossssso-````/ossssss+`       Font: Cantarell 8
        -osssssso.      :ssssssso.      CPU: Intel Core i7-4600U CPU @ 3.3GHz
       :osssssss/        osssso+++.     GPU: Mesa DRI Intel(R) Haswell Mobile
      /ossssssss/        +ssssooo/-     RAM: 293MiB / 7872MiB
