@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#
+# reload script
+
+usage() {
+  cat << EOF
+Usage: with_reload [option]
+Reload script
+
+  -n, --limit NUM   max number of reloads, default 0 (unlimited)
+  -s, --sleep NUM   sleep seconds between reloads, default 1
+  -a, --always      reload even on successful exit (exit code 0)
+  --help            print this message and exit
+
+Examples:
+  with_reload -n 5 mpv a.mpg
+  with_reload mpv a.mpg
+EOF
+}
+
+declare -i RELOADS_LIMIT=0
+declare -i SLEEP_SECONDS=1
+declare -i ALWAYS_RELOAD=0
+
+while [[ $# > 0 ]]; do
+  key="$1"
+  case $key in
+    --debug)
+      DEBUG=1
+      ;;
+    --help)
+      usage
+      exit 0
+      ;;
+    -n|--limit)
+      RELOADS_LIMIT="$2"
+      [ "$RELOADS_LIMIT" -lt 0 ] && RELOADS_LIMIT=0
+      shift
+      ;;
+    -s|--sleep)
+      SLEEP_SECONDS="$2"
+      [ "$SLEEP_SECONDS" -lt 0 ] && SLEEP_SECONDS=0
+      shift
+      ;;
+    -a|--always)
+      ALWAYS_RELOAD=1
+      ;;
+    *)
+      break # keep arguments
+      ;;
+  esac
+  shift # past argument
+done
+
+[ -n "$DEBUG" ] && set -x
+
+declare -r SCRIPT="$*"
+declare -i RELOADS_COUNT=0
+
+while : ; do
+  RELOADS_COUNT+=1
+  $SCRIPT
+  EXIT_CODE="$?"
+  if [ $RELOADS_COUNT -eq $RELOADS_LIMIT ]; then
+    exit $EXIT_CODE
+  fi
+  if [ $ALWAYS_RELOAD -eq 1 ] || [ $EXIT_CODE -gt 0 ]; then
+    sleep $SLEEP_SECONDS
+    continue
+  else
+    exit $EXIT_CODE
+  fi
+done
