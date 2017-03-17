@@ -19,6 +19,14 @@
 '(helm-grep-ag-command
    "TERM=eterm-color rg --color=always --smart-case --no-heading --line-number %s %s %s")
 
+(defun haskell-sort-constraints ()
+  (interactive)
+  (sort-regexp-fields
+    nil "\\(\\w[[:alnum:]\\|[:space:]]*\\w\\)" "\\1"
+    (region-beginning)
+    (region-end)))
+(global-set-key (kbd "C-c C-w") 'haskell-sort-constraints)
+
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
 ;;   face tab removed and tab-mark added
