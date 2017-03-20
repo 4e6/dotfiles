@@ -19,13 +19,18 @@
 '(helm-grep-ag-command
    "TERM=eterm-color rg --color=always --smart-case --no-heading --line-number %s %s %s")
 
-(defun haskell-sort-constraints ()
-  (interactive)
+(defun misc-sort-csv-region (&optional reverse)
+  "Sort CSV, a list of identifiers (alphanumeric including spaces) delimited by
+separator (anything besides alphanumeric or space) inside region. Prefix 'M-u'
+reverses order."
+  (interactive "P")
   (sort-regexp-fields
-    nil "\\(\\w[[:alnum:]\\|[:space:]]*\\w\\)" "\\1"
+    ;; optionally "?'?\1'?"?
+    reverse "\\([[:alnum:]\\s\"\\s']\\([[:alnum:][:space:]\\s\"\\s']*[[:alnum:]\\s\"\\s']\\)*\\)" "\\1"
     (region-beginning)
     (region-end)))
-(global-set-key (kbd "C-c C-w") 'haskell-sort-constraints)
+
+(global-set-key (kbd "C-c C-w") 'misc-sort-csv-region)
 
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
