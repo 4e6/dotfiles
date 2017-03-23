@@ -25,7 +25,7 @@ separator (anything besides alphanumeric or space) inside region. Prefix 'M-u'
 reverses order."
   (interactive "P")
   (sort-regexp-fields
-    reverse "\\([[:alnum:]\\s\"\\s'_]\\([^,]*[[:alnum:]\\s\"\\s'_]\\)*\\)" "\\1"
+    reverse "\\([[:alnum:]_]\\([^,]+\\>\\((..)\\)?\\)*\\)" "\\1"
     (region-beginning)
     (region-end)))
 
