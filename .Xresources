@@ -29,8 +29,8 @@ URxvt.keysym.M-Escape:    perl:keyboard-select:activate
 URxvt.keysym.M-s:         perl:keyboard-select:search
 
 ! Appearance
-URxvt*font:               xft:Input Mono Compressed:style=light:size=8
-URxvt*boldFont:           xft:Input Mono Compressed:bold:style=light:size=8
+URxvt*font:               xft:Iosevka:style=regular:size=8
+URxvt*boldFont:           xft:Iosevka:bold:style=regular:size=8
 URxvt.depth:              32
 URxvt.transparent:        false
 URxvt.fading:             0
@@ -78,12 +78,12 @@ xterm*highlightSelection: true
 xterm*utf8:               2
 xterm*eightBitInput:      true
 xterm*metaSendsEscape:    true
-xterm*faceName:           Input Mono Compressed
+xterm*faceName:           Iosevka
 xterm*faceSize:           8
 xterm*cursorColor:        #DCDCCC
 
 ! Emacs
-Emacs.font:               Input Mono Compressed 8
+Emacs.font:               Iosevka-8
 
 ! Zenburn
 xterm*background:         #3f3f3f
