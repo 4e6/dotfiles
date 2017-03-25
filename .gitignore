@@ -16,6 +16,8 @@
 !/.zshrc
 !/.zshrc.d
 
+!pkglist.txt
+
 # exclude directories
 !/bin/
 !/screenshots/
