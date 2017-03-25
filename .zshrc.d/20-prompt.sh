@@ -67,11 +67,7 @@ prompt_adam2_setup () {
   prompt_line_1a="$prompt_gfx_tbox$prompt_l_paren%B%F{$prompt_adam2_color2}%~$prompt_r_paren%b%F{$prompt_adam2_color1}"
   prompt_line_1b="$prompt_l_paren$prompt_user_host$prompt_r_paren%b%F{$prompt_adam2_color1}${prompt_gfx_hyphen}"
 
-  prompt_line_2="$prompt_gfx_bbox${prompt_gfx_hyphen}%B%F{white}"
-
-  #prompt_char="%(!.#.>)"
-
-  prompt_opts=(cr subst percent)
+  prompt_line_2="$prompt_gfx_bbox${prompt_gfx_hyphen}"
 
   add-zsh-hook precmd prompt_adam2_precmd
 }
@@ -84,9 +80,10 @@ prompt_adam2_precmd() {
 
   prompt_char="%(!.#.`vcs_prompt_symbol '>'`)"
 
-  PS1="$prompt_line_1$prompt_newline$prompt_line_2$vcs_info_msg_0_%B%F{white}$prompt_char %b%f%k"
-  PS2="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}%_> %b%f%k"
-  PS3="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}?# %b%f%k"
+  PS1="$prompt_line_1$prompt_newline$prompt_line_2%B$vcs_info_msg_0_%b%B%F{white}$prompt_char %f%b%k"
+  PS2="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}%_> %f%b%k"
+  PS3="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}?# %f%b%k"
+  # User input in bold
   zle_highlight[(r)default:*]="default:fg=$prompt_adam2_color4,bold"
 }
 
