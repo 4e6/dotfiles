@@ -83,8 +83,8 @@ prompt_adam2_precmd() {
   PS1="$prompt_line_1$prompt_newline$prompt_line_2%B$vcs_info_msg_0_%b%B%F{white}$prompt_char %f%b%k"
   PS2="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}%_> %f%b%k"
   PS3="$prompt_line_2$prompt_gfx_bbox_to_mbox%B%F{white}?# %f%b%k"
-  # User input in bold
-  zle_highlight[(r)default:*]="default:fg=$prompt_adam2_color4,bold"
+  # User intput config (color, bold, etc.)
+  zle_highlight[(r)default:*]="default:fg=$prompt_adam2_color4"
 }
 
 prompt_adam2_choose_prompt () {
