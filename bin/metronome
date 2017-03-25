@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
+#
+# Requirements:
+# - SoX http://sox.sourceforge.net/
 
 usage() {
   cat << EOF
@@ -14,18 +17,18 @@ EOF
 }
 
 play_pad() {
-  local -r bpm=$1
+  bpm=$1
   echo "60/$bpm" | bc -l
 }
 
 play_delay() {
-  local -r channel=$1
-  local -r pad=$2
+  channel=$1
+  pad=$2
   echo "$channel*$pad" | bc -l
 }
 
 enable_debug() {
-  local -r debug=$1
+  debug=$1
   [ -n "$debug" ] && set -x
 }
 
@@ -58,7 +61,7 @@ TOCK=1000
 
 enable_debug $DEBUG
 
-play -n -c1 \
+exec play -n -c1 \
   synth 0.001 sin $TICK sin $TOCK sin $TOCK sin $TOCK \
   pad "$PAD" \
   delay "$DELAY0" "$DELAY1" "$DELAY2" "$DELAY3" \
