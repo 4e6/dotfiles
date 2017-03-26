@@ -31,6 +31,14 @@ reverses order."
 
 (global-set-key (kbd "C-c C-w") 'misc-sort-csv-region)
 
+(add-hook 'find-file-hook
+          '(lambda ()
+             (when (string= (file-name-extension buffer-file-name) "ptl")
+               (whitespace-mode +1)
+               (electric-indent-mode -1)
+               (setq indent-tabs-mode t)
+               (setq tab-always-indent nil))))
+
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
 ;;   face tab removed and tab-mark added
