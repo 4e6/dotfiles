@@ -33,6 +33,7 @@
 !/.config/fontconfig/
 !/.config/mpv/
 /.config/mpv/watch_later/*
+!/.config/nixpkgs/
 !/.config/nvim/
 !/.config/redshift.conf
 !/.config/systemd/
