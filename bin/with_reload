@@ -19,7 +19,7 @@ EOF
 }
 
 declare -i RELOADS_LIMIT=0
-declare -i SLEEP_SECONDS=1
+declare -i SLEEP_SECONDS=0.2
 declare -i ALWAYS_RELOAD=0
 
 while [[ $# > 0 ]]; do
