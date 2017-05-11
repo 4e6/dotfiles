@@ -1,6 +1,8 @@
 " General
 let mapleader="\<SPACE>" " Map the leader key to SPC.
 set hidden               " This allows buffers to be hidden if you've modified a buffer.
+set undofile             " Keep undo history between sessions
+set undodir=~/.local/share/nvim/undo
 
 " Search
 set hlsearch             " Highlight search results.
