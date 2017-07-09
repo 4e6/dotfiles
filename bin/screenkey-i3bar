@@ -2,8 +2,5 @@
 #
 # Place Screenkey on top of i3bar area
 
-SCREENKEY=$HOME/projects/misc/screenkey/screenkey
 
-#exec "$SCREENKEY" --font 'Ubuntu Mono' --timeout 8 --persist --mods-mode emacs --position fixed --geometry 1000x48+270+1398 "$@"
-#exec "$SCREENKEY" --no-systray --font 'Ubuntu Mono' --bgcolor '#0F0F0F' --timeout 8 --persist --mods-mode emacs --position fixed --geometry 880x48+400+1398 "$@"
-exec "$SCREENKEY" --no-systray --font 'Input Sans Compressed 8' --font-color '#F5DEB3' --bg-color '#0F0F0F' --timeout 6 --persist --mods-mode emacs --position fixed --geometry 800x48+400+1398 "$@"
+exec screenkey --font 'Iosevka 8' --font-color '#F5DEB3' --bg-color '#0F0F0F' --timeout 4 --persist --mods-mode emacs --position fixed --geometry 800x46+300+1404 "$@"
