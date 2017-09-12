@@ -63,8 +63,15 @@ prompt_adam2_setup () {
   prompt_r_paren="%B%F{black})"
 
   prompt_user_host="%b%F{$prompt_adam2_color3}%n%B%F{$prompt_adam2_color3}@%b%F{$prompt_adam2_color3}%m"
+  local prompt_in_nix_shell
+  if [ -n "$IN_NIX_SHELL" ]
+  then
+    prompt_in_nix_shell='nix-shell:'
+  else
+    prompt_in_nix_shell=''
+  fi
 
-  prompt_line_1a="$prompt_gfx_tbox$prompt_l_paren%B%F{$prompt_adam2_color2}%~$prompt_r_paren%b%F{$prompt_adam2_color1}"
+  prompt_line_1a="$prompt_gfx_tbox$prompt_l_paren%B%F{$prompt_adam2_color2}$prompt_in_nix_shell%~$prompt_r_paren%b%F{$prompt_adam2_color1}"
   prompt_line_1b="$prompt_l_paren$prompt_user_host$prompt_r_paren%b%F{$prompt_adam2_color1}${prompt_gfx_hyphen}"
 
   prompt_line_2="$prompt_gfx_bbox${prompt_gfx_hyphen}"
