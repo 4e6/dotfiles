@@ -1,9 +1,11 @@
 ;; custom settings
 (setenv "PATH"
   (concat (getenv "PATH")
-          (concat (concat ":" (getenv "HOME")) "/bin")))
+          (concat (concat ":" (getenv "HOME")) "/bin")
+          (concat (concat ":" (getenv "HOME")) "/.local/bin")))
 (setq exec-path
-  (cons (concat (getenv "HOME") "/bin") exec-path))
+  (cons (concat (getenv "HOME") "/bin")
+  (cons (concat (getenv "HOME") "/.local/bin") exec-path)))
 
 (prelude-require-packages
   '(projectile-ripgrep transpose-frame))
