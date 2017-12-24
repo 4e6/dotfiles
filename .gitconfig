@@ -1,65 +1,65 @@
 # local user config, usernames, etc
 [include]
-  path = ~/.gitconfig.local
+	path = ~/.gitconfig.local
 [credential]
-  helper = store
+	helper = store
 [core]
-  editor = vim
-  excludesfile = ~/.gitignore.global
+	editor = vim
+	excludesfile = ~/.gitignore.global
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+	tool = vimdiff
+	conflictstyle = diff3
 [push]
-  default = simple
+	default = simple
 [tag]
-  sort = version:refname
+	sort = version:refname
 [alias]
-  bb = branch -vv
-  cc = commit
-  co = checkout
-  ss = status
-  # update with upstream
-  up = !git pull --summary --rebase --prune $@ && git submodule update --init --recursive
-  # delete branches merged into specified branch
-  # $1 branch, master by default
-  bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
-  # authors with number of commits
-  authors = shortlog -s
-  # contribution by author, expected arguments
-  # $1 - author
-  authorstat = "!f() { \
-    git log --author=\"$1\" --pretty=tformat: --numstat | \
-    gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END \
-    { printf \"added lines: %s removed lines: %s total lines: %s\\n\",add,subs,loc }' - ; \
-    }; f"
-  # changes for given period, expect arguments
-  # $1 - refs to compare: "@{1 week ago}", v0.2..master
-  shortstat = diff --shortstat
-  # count lines of code
-  loc = "!f() { git ls-files -z \"$@\" | wc -l --files0-from=- ; }; f"
-  ls = log --pretty=format:'%C(auto)%h%d %Cblue%cn%Creset %s' --decorate --numstat
-  # graphical commits tree
-  ll = log --graph --oneline --decorate
-  # graphical commits tree with names and dates
-  la = log --graph --pretty=format:'%C(auto)%h %ad%d %Cblue%an%Creset %s' --date=relative
-  # changes in file
-  lf = log -u
-  # pulled changes
-  fetchlog = log ORIG_HEAD.. --stat --no-merges
-  # resolve conflicts with gui
-  gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
-  # upstream of current branch
-  show-upstream = rev-parse --abbrev-ref @{u}
-  # wipe unsaved changes
-  wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
-  # reset to upstream
-  reset-upstream = "!f() { git reset --hard $(git show-upstream); }; f"
-  # add non-whitespace changes (whitespace=fix should deal with patch errors)
-  addw = "!f() { git diff -w $@ | git apply -v --cached --ignore-whitespace; }; f"
-  addwf = "!f() { git diff -w $@ | git apply -v --cached --whitespace=fix; }; f"
+	bb = branch -vv
+	cc = commit
+	co = checkout
+	ss = status
+	# update with upstream
+	up = !git pull --summary --rebase --prune $@ && git submodule update --init --recursive
+	# delete branches merged into specified branch
+	# $1 branch, master by default
+	bclean = "!f() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -r git branch -d; }; f"
+	# authors with number of commits
+	authors = shortlog -s
+	# contribution by author, expected arguments
+	# $1 - author
+	authorstat = "!f() { \
+		git log --author=\"$1\" --pretty=tformat: --numstat | \
+		gawk '{ add += $1 ; subs += $2 ; loc += $1 - $2 } END \
+		{ printf \"added lines: %s removed lines: %s total lines: %s\\n\",add,subs,loc }' - ; \
+		}; f"
+	# changes for given period, expect arguments
+	# $1 - refs to compare: "@{1 week ago}", v0.2..master
+	shortstat = diff --shortstat
+	# count lines of code
+	loc = "!f() { git ls-files -z \"$@\" | wc -l --files0-from=- ; }; f"
+	ls = log --pretty=format:'%C(auto)%h%d %Cblue%cn%Creset %s' --decorate --numstat
+	# graphical commits tree
+	ll = log --graph --oneline --decorate
+	# graphical commits tree with names and dates
+	la = log --graph --pretty=format:'%C(auto)%h %ad%d %Cblue%an%Creset %s' --date=relative
+	# changes in file
+	lf = log -u
+	# pulled changes
+	fetchlog = log ORIG_HEAD.. --stat --no-merges
+	# resolve conflicts with gui
+	gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+	# upstream of current branch
+	show-upstream = rev-parse --abbrev-ref @{u}
+	# wipe unsaved changes
+	wipe = !git add -A && git commit -qm 'WIPE SAVEPOINT' && git reset HEAD~1 --hard
+	# reset to upstream
+	reset-upstream = "!f() { git reset --hard $(git show-upstream); }; f"
+	# add non-whitespace changes (whitespace=fix should deal with patch errors)
+	addw = "!f() { git diff -w $@ | git apply -v --cached --ignore-whitespace; }; f"
+	addwf = "!f() { git diff -w $@ | git apply -v --cached --whitespace=fix; }; f"
 [color]
-  ui = auto
+	ui = auto
 [fetch]
-  prune = true
+	prune = true
 [rebase]
-  autosquash = true
+	autosquash = true
