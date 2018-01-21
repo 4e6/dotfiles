@@ -1,3 +1,7 @@
 [submodule ".vim/vim-plug"]
 	path = .vim/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule ".config/mpv/scripts/mpv-reload"]
+	path = .config/mpv/scripts/mpv-reload
+	url = https://github.com/4e6/mpv-reload
+	branch = master
