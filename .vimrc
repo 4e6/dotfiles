@@ -23,10 +23,9 @@ set ignorecase " Ignore case when searching
 set smartcase " Make searches case sensitive only if they contain uppercase stuff
 
 " Indent/tab options
-set expandtab " Use spaces for tabs.
+set smarttab
 set shiftwidth=2 " Number of spaces to autoindent.
 set softtabstop=2 " Number of spaces for a tab.
-set smarttab
 
 " Indent as many times as you want in visual mode without losing focus
 vnoremap < <gv
