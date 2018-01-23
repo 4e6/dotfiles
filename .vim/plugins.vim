@@ -97,6 +97,17 @@ Plug 'tpope/vim-surround'
 
 Plug 'jnurmine/Zenburn'
 
+" Distraction-free writing in Vim
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+  " Color name (:help cterm-colors) or ANSI code
+  let g:limelight_conceal_ctermfg = 'gray'
+  let g:limelight_conceal_ctermfg = 240
+
+  " Goyo.vim integration
+  autocmd! User GoyoEnter Limelight
+  autocmd! User GoyoLeave Limelight!
+
 call plug#end()
 
 colorscheme zenburn
