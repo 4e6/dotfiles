@@ -17,12 +17,16 @@ set showmatch            " Show matching brackets.
 set showmode             " Show current mode.
 set ruler                " Show the line and column numbers of the cursor.
 set number               " Show the line numbers on the left side.
+set colorcolumn=80
 
-"set tabstop=2            " Render TABs using this many spaces.
+set smarttab             " Auto insert appropriate number of tabs or spaces
 set shiftwidth=2         " Indentation amount for < and > commands.
 set softtabstop=2
-set smarttab
-set smartindent
+set tabstop=2
+set expandtab            " Tabs are spaces, use Ctrl+v Tab to insert tab
+set autoindent
+set copyindent
+set preserveindent
 
 set modeline             " Check beginning and end of file for modelines.
 set nojoinspaces         " Prevents inserting two spaces after punctuation on a join (J)
@@ -83,7 +87,7 @@ function! NumberToggle()
   else
     set rnu
   endif
-endfunc
+ ndfunc
 
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
