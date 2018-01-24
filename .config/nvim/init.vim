@@ -87,7 +87,7 @@ function! NumberToggle()
   else
     set rnu
   endif
- ndfunc
+endfunction
 
 " Toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
