@@ -3,6 +3,8 @@ dotfiles
 
 ## Fonts
 
+Console Font: [Iosevka](https://be5invis.github.io/Iosevka/)
+
 Fonts from `fonts-meta` AUR bundle
 
 ```
@@ -15,7 +17,4 @@ local/fonts-meta-extended-lt 2-2
 
 ## Screenshots
 
-Console Font: [Iosevka](https://be5invis.github.io/Iosevka/)
-
 ![layout](screenshots/screenFetch-2018-02-06_16-38-13.png)
-
