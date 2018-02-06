@@ -5,7 +5,7 @@ dotfiles
 
 Console Font: [Iosevka](https://be5invis.github.io/Iosevka/)
 
-Fonts from `fonts-meta` AUR bundle
+Other fonts are from `fonts-meta` AUR bundle:
 
 ```
 $ yaourt -Qs 'fonts-meta'
