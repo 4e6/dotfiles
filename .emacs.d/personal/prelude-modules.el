@@ -15,7 +15,6 @@
 (require 'prelude-js)
 (require 'prelude-latex)
 (require 'prelude-lisp)
-(require 'prelude-ocaml)
 (require 'prelude-python)
 (require 'prelude-shell)
 (require 'prelude-xml)
