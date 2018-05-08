@@ -26,6 +26,3 @@
 
 "i3lock -c 3f3f3f && xset dpms force off"
   XF86Display
-
-"i3lock -c 3f3f3f"
-  Control+Alt + l
