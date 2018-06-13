@@ -11,14 +11,14 @@
 "light -S 100"
   Control+Shift+XF86MonBrightnessUp
 
-"amixer -c 0 set Master 1dB- && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
+"pamixer --decrease 3 && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
   XF86AudioLowerVolume
-"amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
+"pamixer --increase 3 && pamixer --unmute && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
   XF86AudioRaiseVolume
 
-"amixer -c 0 set Master 1dB-"
+"pamixer --decrease 3"
   Control+XF86AudioLowerVolume
-"amixer -c 0 set Master 1dB+ && amixer -D pulse set Master unmute"
+"pamixer --increase 3 && pamixer --unmute"
   Control+XF86AudioRaiseVolume
 
 "amixer -D pulse set Master toggle"
