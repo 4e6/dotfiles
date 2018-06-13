@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#
+# requires:
+# - curl
+# - dig
+
+declare -r TMP_BLACKLIST=/tmp/reestr.rublacklist.net_api_ips
+declare -a IPS=()
+
+usage() {
+  cat << EOF
+Usage: rublacklist [option]
+Check if address in reestr.rublacklist.net
+
+  -i, --ip ADDR        check ip address
+  -h, --hostname HOST  resolve and check hostname
+  -u, --update         update blacklist
+  --help               print this message and exit
+
+Requires: curl, dig
+
+Examples:
+  rublacklist -h rutracker.org
+  1 : 195.82.146.214
+EOF
+}
+
+verbose() {
+  (set -x; $@)
+}
+
+fetch_blacklist() {
+  verbose curl -s -o $TMP_BLACKLIST reestr.rublacklist.net/api/ips
+}
+
+
+while [[ $# > 0 ]]; do
+  key="$1"
+  case $key in
+    --help)
+      usage
+      exit 0
+      ;;
+    -i|--ip)
+      IPS=( "$2" )
+      shift
+      ;;
+    -h|--hostname)
+      IPS=( $(dig A "$2" +short @8.8.8.8) )
+      shift
+      ;;
+    -u|--update)
+      fetch_blacklist
+      ;;
+    *)
+      break # keep arguments
+      ;;
+  esac
+  shift # past argument
+done
+
+if [ ${#IPS[@]} -eq 0 ]; then
+  usage
+  exit 1
+fi
+
+if [ ! -f "$TMP_BLACKLIST" ]; then
+  fetch_blacklist
+fi
+
+for ip in ${IPS[@]}; do
+  echo "$(grep -c $ip $TMP_BLACKLIST) : $ip"
+done
