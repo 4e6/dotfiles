@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec /usr/bin/chromium \
+  --user-data-dir=~/.config/chromium-clean \
+  --force-device-scale-factor=1.5 \
+  "$@"
