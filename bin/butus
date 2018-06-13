@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#
+
+set -e
+
+usage() {
+  cat << EOF
+Usage:
+ butus on|off
+
+Control bluetooth
+EOF
+}
+
+butus_off() {
+  pkill blueman-applet
+  systemctl stop bluetooth.service
+}
+
+butus_on() {
+  systemctl start bluetooth.service
+  blueman-applet > /dev/null &
+}
+
+case $1 in
+  off)
+    butus_off
+    ;;
+  on)
+    butus_on
+    ;;
+  *)
+    usage
+    ;;
+esac
