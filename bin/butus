@@ -13,7 +13,7 @@ EOF
 }
 
 butus_off() {
-  pkill blueman-applet
+  pkill blueman || true
   systemctl stop bluetooth.service
 }
 
