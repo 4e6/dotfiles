@@ -1,5 +1,3 @@
-agda
-agda-stdlib
 alsa-utils
 arandr
 aria2
@@ -10,17 +8,16 @@ aurvote
 base-devel
 cabal-install
 chromium
+diff-so-fancy
 dmenu2
 emacs
 exiv2
+fish
 fonts-meta-extended-lt
 ghc
 gimp
 git
 gzip
-haskell-hlint
-haskell-hscolour
-hasktags
 i3
 idris
 intel-ucode
@@ -62,10 +59,8 @@ xcursor-openzone
 xdg-utils-mimeo
 xdot
 xf86-input-synaptics
-yaourt
 youtube-dl
 zathura
 zathura-cb
 zathura-djvu
 zathura-pdf-mupdf
-zsh
