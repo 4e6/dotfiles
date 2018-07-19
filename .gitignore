@@ -4,7 +4,6 @@
 # exclude files
 !/.gitignore
 
-!/.ctags
 !/.gitconfig
 !/.gitmodules
 !/.ghci
