@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+#
+
+set -e
+
+usage() {
+  cat << EOF
+Usage:
+ cupsy on|off|status
+
+Control cups
+EOF
+}
+
+cupsy_off() {
+  systemctl stop org.cups.cupsd.service
+  systemctl stop cups-browsed.service
+}
+
+cupsy_on() {
+  systemctl start org.cups.cupsd.service
+  systemctl start cups-browsed.service
+}
+
+cupsy_status() {
+  systemctl status org.cups.cupsd.service
+  systemctl status cups-browsed.service
+}
+
+case $1 in
+  off)
+    cupsy_off
+    ;;
+  on)
+    cupsy_on
+    ;;
+  status)
+    cupsy_status
+    ;;
+  *)
+    usage
+    ;;
+esac
