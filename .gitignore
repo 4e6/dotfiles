@@ -12,10 +12,8 @@
 !/.xbindkeysrc
 !/.xinitrc
 !/.yaourtrc
-!/.zprofile
-!/.zshenv
-!/.zshrc
-!/.zshrc.d
+!/.bashrc
+!/.bash_profile
 
 !pkglist.txt
 
