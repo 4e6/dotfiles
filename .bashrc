@@ -15,7 +15,7 @@ export BROWSER=chromium
 export FILE_MANAGER_APP='urxvtc -e ranger'
 export VIDEO_APP='urxvtc -e mplayer'
 # parallel xz
-export XZ_OPT='-T0'
+export XZ_DEFAULTS='-T0'
 
 export NO_AT_BRIDGE=1
 
