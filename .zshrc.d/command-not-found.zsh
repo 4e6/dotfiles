@@ -1,1 +1,0 @@
-/usr/share/doc/pkgfile/command-not-found.zsh
