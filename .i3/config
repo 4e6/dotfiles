@@ -93,16 +93,16 @@ bindsym $mod+g focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+2 workspace 2; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+3 workspace 3; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+4 workspace 4; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+5 workspace 5; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+6 workspace 6; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+7 workspace 7; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+8 workspace 8; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+9 workspace 9; [class="Screenkey"] move workspace current; focus mode_toggle
-bindsym $mod+0 workspace 10; [class="Screenkey"] move workspace current; focus mode_toggle
+bindsym $mod+1 workspace 1; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+2 workspace 2; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+3 workspace 3; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+4 workspace 4; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+5 workspace 5; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+6 workspace 6; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+7 workspace 7; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+8 workspace 8; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+9 workspace 9; [class="Screenkey"] move workspace current; focus tiling
+bindsym $mod+0 workspace 10; [class="Screenkey"] move workspace current; focus tiling
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
@@ -258,8 +258,6 @@ mouse_warping none
 new_float normal
 new_window pixel 1
 hide_edge_borders smart
-
-for_window [title="nucl.ai"] floating enable
 
 # Autostart
 exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.i3/workspace-10.json'"

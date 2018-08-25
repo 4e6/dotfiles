@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+quadrant=${1:-4}
+
+X_x=2560
+X_y=1440
+window_x=1024
+window_y=580
+bar_y=40
+
+case $quadrant in
+  1)
+    window_position_x=$((X_x - window_x))
+    window_position_y=0
+    ;;
+  2)
+    window_position_x=0
+    window_position_y=0
+    ;;
+  3)
+    window_position_x=0
+    window_position_y=$((X_y - bar_y - window_y))
+    ;;
+  4)
+    window_position_x=$((X_x - window_x))
+    window_position_y=$((X_y - bar_y - window_y))
+    ;;
+esac
+
+i3-msg "[class=mpv] floating enable sticky enable resize set $window_x px $window_y px"
+i3-msg "[class=mpv] move position $window_position_x $window_position_y"
+i3-msg "focus tiling"

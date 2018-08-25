@@ -26,3 +26,15 @@
 
 "i3lock -c 3f3f3f && xset dpms force off"
   XF86Display
+
+"i3-mpv-floating 1"
+  Control+Alt+1
+
+"i3-mpv-floating 2"
+  Control+Alt+2
+
+"i3-mpv-floating 3"
+  Control+Alt+3
+
+"i3-mpv-floating 4"
+  Control+Alt+4
