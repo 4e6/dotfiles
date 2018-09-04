@@ -1,0 +1,4 @@
+#!/bin/sh
+
+module=$1
+modprobe --remove $module && modprobe $module
