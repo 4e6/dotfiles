@@ -23,7 +23,6 @@
 
 !/.emacs.d/
 /.emacs.d/*
-!/.emacs.d/prelude-modules.el
 !/.emacs.d/personal/
 
 !/.config/
