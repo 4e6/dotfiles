@@ -22,4 +22,4 @@ export NO_AT_BRIDGE=1
 PATH=~/bin:~/.local/bin:$PATH
 
 unset fish_greeting
-if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
+if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi
