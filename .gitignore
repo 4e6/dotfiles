@@ -3,6 +3,7 @@
 
 # exclude files
 !/.gitignore
+!/.gitignore.global
 
 !/.gitconfig
 !/.gitmodules
