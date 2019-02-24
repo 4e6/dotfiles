@@ -19,7 +19,7 @@ butus_off() {
 
 butus_on() {
   systemctl start bluetooth.service
-  blueman-applet 2>&1 > /dev/null &
+  blueman-applet > /dev/null 2>&1 &
 }
 
 case $1 in
