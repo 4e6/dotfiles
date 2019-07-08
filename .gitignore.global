@@ -1,15 +1,20 @@
 # cabal
-/.cabal-sandbox/
-/cabal.sandbox.config
-/dist/
-/dist-newstyle/
-/.hlint.yaml
+.cabal-sandbox/
+cabal.sandbox.config
+cabal.project.local
+dist/
+dist-newstyle/
+.hlint.yaml
+.ghc.environment.*
+
+# stack
+.stack-work/
 
 # emacs
 .dir-locals.el
 
 # sbt
-retarget.sbt
+.sbtopts
 /.lib-src/
 /tags
 
