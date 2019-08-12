@@ -1,5 +1,6 @@
 [Unit]
 Description=Emacs: the extensible, self-documenting text editor
+After=network.target
 After=xorg.service
 
 [Service]
