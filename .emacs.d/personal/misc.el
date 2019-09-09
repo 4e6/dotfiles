@@ -1,14 +1,5 @@
-;; custom settings
-(setenv "PATH"
-  (concat (getenv "PATH")
-          (concat (concat ":" (getenv "HOME")) "/bin")
-          (concat (concat ":" (getenv "HOME")) "/.local/bin")))
-(setq exec-path
-  (cons (concat (getenv "HOME") "/bin")
-  (cons (concat (getenv "HOME") "/.local/bin") exec-path)))
-
 (prelude-require-packages
-  '(projectile-ripgrep transpose-frame))
+  '(memento-mori projectile-ripgrep transpose-frame))
 
 (require 'transpose-frame)
 (require 'projectile-ripgrep)
@@ -36,6 +27,12 @@ reverses order."
                (electric-indent-mode -1)
                (setq indent-tabs-mode t)
                (setq tab-always-indent nil))))
+
+;; memento-mori
+(require 'memento-mori)
+(custom-set-variables
+ '(memento-mori-birth-date "1988-03-06")
+ '(memento-mori-mode 1))
 
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
