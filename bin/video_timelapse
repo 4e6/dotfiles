@@ -1,0 +1,7 @@
+#!/bin/sh
+
+src=$1
+out=$2
+pts=${3-0.1}
+
+exec ffmpeg -i "$src" -filter:v "setpts=$pts*PTS" -an "$out"
