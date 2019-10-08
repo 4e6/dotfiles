@@ -1,5 +1,5 @@
 (prelude-require-packages
-  '(memento-mori projectile-ripgrep transpose-frame))
+  '(company-coq memento-mori projectile-ripgrep proof-general transpose-frame))
 
 (require 'transpose-frame)
 (require 'projectile-ripgrep)
@@ -33,6 +33,9 @@ reverses order."
 (custom-set-variables
  '(memento-mori-birth-date "1988-03-06")
  '(memento-mori-mode 1))
+
+;; coq
+(add-hook 'coq-mode-hook #'company-coq-mode)
 
 ;; whitespace-mode settings
 ;; * do not highlight tabs and mark them as `>>` character
