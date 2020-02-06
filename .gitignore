@@ -28,6 +28,7 @@
 
 !/.config/
 /.config/*
+!/.config/chromium-flags.conf
 !/.config/fontconfig/
 !/.config/mpv/
 /.config/mpv/watch_later/*

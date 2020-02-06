@@ -1,7 +1,0 @@
-#!/bin/sh
-#
-# Proper rendering on HiDPI displays
-
-exec /usr/bin/chromium \
-  --force-device-scale-factor=1.5 \
-  "$@"
