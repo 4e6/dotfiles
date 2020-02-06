@@ -1,0 +1,14 @@
+#!/bin/sh
+
+active_profile="$(netctl list | grep '*' | cut -c 3-)"
+profile=${1:-$active_profile}
+
+netctl stop "$profile"
+rfkill block wifi
+sleep 1
+rfkill unblock wifi
+#sleep 1
+ifconfig wlp3s0 down
+#sleep 1
+#ifconfig wlp3s0 up
+netctl start "$profile"
