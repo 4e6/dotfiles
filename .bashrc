@@ -16,6 +16,8 @@ export FILE_MANAGER_APP='urxvtc -e ranger'
 export VIDEO_APP='urxvtc -e mplayer'
 # parallel xz
 export XZ_DEFAULTS='-T0'
+# colors
+export LESS='-Xr'
 
 export NO_AT_BRIDGE=1
 
