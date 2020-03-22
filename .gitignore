@@ -12,7 +12,6 @@
 !/.Xresources
 !/.xbindkeysrc
 !/.xinitrc
-!/.yaourtrc
 !/.bashrc
 !/.bash_profile
 !/.toprc
@@ -30,7 +29,6 @@
 !/.config/
 /.config/*
 !/.config/chromium-flags.conf
-!/.config/fontconfig/
 !/.config/mpv/
 /.config/mpv/watch_later/*
 !/.config/nixpkgs/
