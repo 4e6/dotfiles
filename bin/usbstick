@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+usage () {
+  cat << EOF
+Usage:
+  usbstick /dev/sdb1
+EOF
+}
+
+case "$1" in
+  '')
+    usage
+    exit 1
+    ;;
+  *)
+    mount -o gid=users,fmask=113,dmask=002 "$1" /mnt/usbstick
+    ;;
+esac
