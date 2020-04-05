@@ -1,0 +1,76 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 724,
+               "width": 964,
+               "x": 0,
+               "y": 0
+            },
+            "name": "top",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^URxvt$",
+               // "instance": "^urxvt$",
+               "title": "^top$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 724,
+               "width": 964,
+               "x": 0,
+               "y": 0
+            },
+            "name": "journalctl",
+            "percent": 0.5,
+            "swallows": [
+               {
+               // "class": "^URxvt$",
+               // "instance": "^urxvt$",
+               "title": "^journalctl$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 3,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 724,
+       "width": 964,
+       "x": 0,
+       "y": 0
+    },
+    "name": "hello",
+    "percent": 0.5,
+    "swallows": [
+       {
+       // "class": "^URxvt$",
+       // "instance": "^urxvt$",
+       "title": "^hello$"
+       }
+    ],
+    "type": "con"
+}
+

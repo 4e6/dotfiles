@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+#
+
+usage() {
+  cat << EOF
+Usage:
+  sys_switch 0|1|toggle </sys/devices/some/device>
+EOF
+}
+
+sys_check_exists () {
+  local device="$1"
+  if [ -z "$device" ]
+  then
+    echo "ERR: provide path to device"
+    exit 1
+  fi
+}
+
+sys_set () {
+  local value="$1"
+  local device="$2"
+  echo "$value" > "$device"
+}
+
+sys_toggle () {
+  local device="$1"
+  if [ "$(cat $device)"  == '0' ]
+  then
+    echo "1" > "$device"
+  else
+    echo "0" > "$device"
+  fi
+}
+
+case "$1" in
+  ''|'-h'|'--help')
+    usage
+    ;;
+  'toggle')
+    sys_check_exists "$2"
+    sys_toggle "$2"
+    ;;
+  *)
+    sys_check_exists "$2"
+    sys_set "$1" "$2"
+    ;;
+esac
+
