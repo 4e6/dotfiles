@@ -38,6 +38,7 @@
 !/.config/nvim/
 !/.config/redshift.conf
 !/.config/systemd/
+/.config/systemd/user/*.wants/
 
 !/.i3/
 
