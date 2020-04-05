@@ -30,6 +30,7 @@
 !/.config/
 /.config/*
 !/.config/chromium-flags.conf
+!/.config/i3/
 !/.config/mpv/
 /.config/mpv/watch_later/*
 !/.config/nixpkgs/

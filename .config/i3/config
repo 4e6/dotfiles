@@ -216,7 +216,7 @@ workspace_auto_back_and_forth yes
 bar {
         output eDP-1
         output eDP1
-        status_command i3status -c ~/.i3/i3status.conf
+        status_command i3status -c ~/.config/i3/i3status.conf
 
         colors {
                 background         #0F0F0F
@@ -239,7 +239,7 @@ bar {
         hidden_state hide
         modifier Mod4
 
-        status_command i3status -c ~/.i3/i3status.conf
+        status_command i3status -c ~/.config/i3/i3status.conf
 
         colors {
                 background         #0F0F0F
@@ -260,12 +260,10 @@ new_window pixel 1
 hide_edge_borders smart
 
 # Autostart
-exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.i3/workspace-10.json'"
+exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.config/i3/workspace-10.json'"
 
 exec urxvtc -title top -e top
 exec urxvtc -title journalctl -e journalctl -f
 exec urxvtc -title hello
-#exec urxvtc -title wifi -e sh -c 'sudo wifi-menu'
-exec urxvtc -title 'netctl switch-to home' -e sh -c 'sudo netctl switch-to home'
 
 exec i3lock -c 3f3f3f
