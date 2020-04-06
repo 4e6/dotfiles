@@ -43,7 +43,9 @@
 !/.config/systemd/
 /.config/systemd/user/*.wants/
 
-!/.i3/
+!/.local/
+/.local/*
+!/.local/bin/
 
 !/.nixpkgs/
 
