@@ -30,6 +30,9 @@
 !/.config/
 /.config/*
 !/.config/base16-shell
+!/.config/fish/
+/.config/fish/*
+!/.config/fish/config.fish
 !/.config/i3/
 !/.config/mpv/
 /.config/mpv/watch_later/*
