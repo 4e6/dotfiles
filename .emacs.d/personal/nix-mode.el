@@ -1,4 +1,4 @@
-(prelude-require-package 'nix-mode)
+(prelude-require-packages '(use-package nix-mode))
 
 (use-package nix-mode
   :mode ("\\.nix\\'" "\\.nix.in\\'"))
