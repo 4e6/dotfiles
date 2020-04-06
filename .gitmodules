@@ -4,3 +4,6 @@
 [submodule ".config/mpv/scripts/mpv-reload"]
 	path = .config/mpv/scripts/mpv-reload
 	url = https://github.com/4e6/mpv-reload
+[submodule "/home/dbushev/.config/base16-shell"]
+	path = /home/dbushev/.config/base16-shell
+	url = https://github.com/chriskempson/base16-shell.git
