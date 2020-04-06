@@ -19,6 +19,12 @@ xset s off
 xset -b # disable beep
 [ -f .Xresources ] && xrdb -merge .Xresources
 [ -f .xmod ] && xmodmap .xmod
+# sound
+#amixer sset 'Capture' 100%
+amixer -c 0 sset 'Master' 100%
+amixer -c 0 sset 'Capture' 100%
+amixer -c 0 sset 'Dmic0' 100%
+amixer -c 0 sset 'Dmic1' 100%
 
 # daemons
 xbindkeys
