@@ -29,6 +29,7 @@
 
 !/.config/
 /.config/*
+!/.config/base16-shell
 !/.config/i3/
 !/.config/mpv/
 /.config/mpv/watch_later/*
