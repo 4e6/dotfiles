@@ -13,7 +13,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=chromium
 export FILE_MANAGER_APP='urxvtc -e ranger'
-export VIDEO_APP='urxvtc -e mplayer'
+export VIDEO_APP='urxvtc -e mpv'
 # parallel xz
 export XZ_DEFAULTS='-T0'
 # colors
@@ -24,5 +24,5 @@ export NO_AT_BRIDGE=1
 PATH=~/bin:~/.local/bin:$PATH
 
 unset fish_greeting
-if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
-#if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi
+#if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
+if [ -z "$BASH_EXECUTION_STRING" ]; then exec fish; fi
