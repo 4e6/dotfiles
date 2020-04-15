@@ -1,0 +1,1 @@
+../../.config/google-styleguide/google-c-style.el

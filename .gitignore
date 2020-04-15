@@ -33,6 +33,7 @@
 !/.config/fish/
 /.config/fish/*
 !/.config/fish/config.fish
+!/.config/google-styleguide
 !/.config/i3/
 !/.config/mpv/
 /.config/mpv/watch_later/*

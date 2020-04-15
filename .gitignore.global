@@ -17,12 +17,7 @@ dist-newstyle/
 .sbtopts
 /.lib-src/
 /tags
-
-# ensime
-.ensime
-.ensime_cache/
-/ensime.sbt
-flycheck*.ensime
+local.sbt
 
 # idea
 /.idea

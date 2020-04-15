@@ -26,3 +26,14 @@
 (require 'flycheck-irony)
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+;; style
+(autoload 'google-set-c-style "google-c-style")
+(autoload 'google-make-newline-indent "google-c-style")
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(add-hook 'java-mode-hook
+          (lambda ()
+            (google-set-c-style)
+            (setq whitespace-line-column 100)
+            (setq fill-column 100)))
