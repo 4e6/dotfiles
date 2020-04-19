@@ -16,12 +16,10 @@ export FILE_MANAGER_APP='urxvtc -e ranger'
 export VIDEO_APP='urxvtc -e mpv'
 # parallel xz
 export XZ_DEFAULTS='-T0'
-# colors
-export LESS='-Xr'
 
 export NO_AT_BRIDGE=1
 
-PATH=~/bin:~/.local/bin:$PATH
+PATH=~/bin:~/.local/bin:~/.local/sbin:$PATH
 
 unset fish_greeting
 #if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
