@@ -14,11 +14,13 @@ EOF
 
 butus_off() {
   pkill blueman || true
+  bluetoothctl power off
   systemctl stop bluetooth.service
 }
 
 butus_on() {
   systemctl start bluetooth.service
+  bluetoothctl power on
   blueman-applet > /dev/null 2>&1 &
 }
 
