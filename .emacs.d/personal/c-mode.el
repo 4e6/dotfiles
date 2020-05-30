@@ -34,6 +34,8 @@
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
 (add-hook 'java-mode-hook
           (lambda ()
+            (require 'google-c-style)
             (google-set-c-style)
+            (google-make-newline-indent)
             (setq whitespace-line-column 100)
             (setq fill-column 100)))
