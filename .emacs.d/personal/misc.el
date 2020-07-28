@@ -1,12 +1,12 @@
 (prelude-require-packages
-  '(company-coq memento-mori projectile-ripgrep proof-general transpose-frame))
+  '(company-coq memento-mori proof-general transpose-frame prettier-js))
 
 (require 'transpose-frame)
-(require 'projectile-ripgrep)
 
 ;; helm interactive search with ripgrep
-'(helm-grep-ag-command
-   "TERM=eterm-color rg --color=always --smart-case --no-heading --line-number %s %s %s")
+;'(helm-grep-ag-command
+   ;"TERM=eterm-color rg --color=always --smart-case --no-heading --line-number %s %s %s")
+(setq helm-ag-insert-at-point 'symbol)
 
 (defun misc-sort-csv-region (&optional reverse)
   "Sort CSV, a list of identifiers (alphanumeric including spaces) delimited by
@@ -36,6 +36,9 @@ reverses order."
 
 ;; coq
 (add-hook 'coq-mode-hook #'company-coq-mode)
+
+;; enable prettier-js formatter for file types
+(add-hook 'markdown-mode-hook #'prettier-js-mode)
 
 ;; whitespace-mode settings
 ;;
