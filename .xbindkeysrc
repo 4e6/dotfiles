@@ -11,20 +11,20 @@
 "light -S 100"
   Control+Shift+XF86MonBrightnessUp
 
-"pamixer --decrease 3 && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
-  XF86AudioLowerVolume
-"pamixer --increase 3 && pamixer --unmute && ps -e | grep mplayer || mplayer ~/.local/quake3/sounds/menu1.wav"
+"pactl set-sink-volume @DEFAULT_SINK@ +10%"
   XF86AudioRaiseVolume
-
-"pamixer --decrease 3"
+"pactl set-sink-volume @DEFAULT_SINK@ -10%"
+  XF86AudioLowerVolume
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
   Control+XF86AudioLowerVolume
-"pamixer --increase 3 && pamixer --unmute"
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
   Control+XF86AudioRaiseVolume
-
-"amixer -D pulse set Master toggle"
+"sound_switch audio"
   XF86AudioMute
+"sound_switch mic"
+  XF86AudioMicMute
 
-"i3lock -c 3f3f3f && xset dpms force off"
+"i3lock -c 383838 && xset dpms force off"
   XF86Display
 
 "i3-mpv-floating 1"
