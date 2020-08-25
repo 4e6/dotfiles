@@ -295,5 +295,6 @@ exec urxvtc -title journalctl -e journalctl -f
 exec urxvtc -title hello
 
 exec systemctl --user start redshift.service
+exec amixer -c 0 sset 'Master' on
 
 exec i3lock -c 383838
