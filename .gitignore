@@ -22,7 +22,6 @@
 !/bin/
 !/screenshots/
 
-!/.aria2/
 !/.emacs.d/
 /.emacs.d/*
 !/.emacs.d/personal/
