@@ -8,6 +8,7 @@
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
+export TERM=xterm
 export TERMINAL=urxvtc
 export EDITOR=nvim
 export VISUAL=nvim
