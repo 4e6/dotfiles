@@ -77,3 +77,5 @@
 	whitespace = red reverse
 [diff-so-fancy]
 	markEmptyLines = false
+[pull]
+	rebase = true
