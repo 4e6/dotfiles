@@ -3,10 +3,12 @@
 (defvar enso-font-lock-keywords
   `(
     ;; Keywords
-    ,(regexp-opt '("type" "import" "export" "from" "polyglot" "if" "then" "else" "case") 'symbols)
+    (,
+     (rx (or "type" "import" "export" "from" "polyglot" "if" "then" "else" "case"))
+     (0 font-lock-keyword-face))
     ;; Assignments
     (,
-     (rx symbol-start (group (in alpha "_") (zero-or-more (in alnum "_.'-"))) (zero-or-more space) "=")
+     (rx symbol-start (group (one-or-more (in alnum "_+-"))) (zero-or-more space (zero-or-more (in alnum "_"))) "=")
      (1 font-lock-variable-name-face))
     ;; Ascriptions
     (,
