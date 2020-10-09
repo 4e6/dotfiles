@@ -1,11 +1,18 @@
 (defvar enso-mode-hook nil)
 
 (defvar enso-font-lock-keywords
-  ;; Keywords
-  `(,(regexp-opt '("type" "import" "export" "from" "polyglot" "if" "then" "else" "case") 'symbols)
-  ;; Assignments
-    (,(rx symbol-start (group (in alpha "_") (zero-or-more (in alnum "_.'-"))) (zero-or-more space) "=")
-     (1 font-lock-variable-name-face)))
+  `(
+    ;; Keywords
+    ,(regexp-opt '("type" "import" "export" "from" "polyglot" "if" "then" "else" "case") 'symbols)
+    ;; Assignments
+    (,
+     (rx symbol-start (group (in alpha "_") (zero-or-more (in alnum "_.'-"))) (zero-or-more space) "=")
+     (1 font-lock-variable-name-face))
+    ;; Ascriptions
+    (,
+     (rx symbol-start (group (in alpha "_") (zero-or-more (in alnum "_-"))) (zero-or-more space) ":")
+     (1 font-lock-variable-name-face))
+    )
   "Font lock keywords for enso")
 
 (defvar enso-mode-syntax-table
