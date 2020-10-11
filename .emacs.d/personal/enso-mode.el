@@ -4,15 +4,23 @@
   `(
     ;; Keywords
     (,
-     (rx (or "type" "import" "export" "from" "polyglot" "if" "then" "else" "case"))
+     (rx (or "type " "import " "export " "from " "polyglot " "if" "then" "else" "case "))
      (0 font-lock-keyword-face))
-    ;; Assignments
+    ;; Builtins
     (,
-     (rx symbol-start (group (one-or-more (in alnum "_+-"))) (zero-or-more space (zero-or-more (in alnum "_"))) "=")
-     (1 font-lock-variable-name-face))
+     (rx (or "Builtins" "Array" "Meta" "System" "True" "False" "Panic" "Polyglot_Error" "Text_Utils" "Time_Utils" "this" "here"))
+     (0 font-lock-builtin-face))
     ;; Ascriptions
     (,
-     (rx symbol-start (group (in alpha "_") (zero-or-more (in alnum "_-"))) (zero-or-more space) ":")
+     (rx (group (one-or-more (in alnum "=_+-"))) (zero-or-more space) ":")
+     (1 font-lock-variable-name-face))
+    ;; Assignments
+    (,
+     (rx
+      (group (one-or-more (in alnum "=_+-")))
+      (zero-or-more space (one-or-more (in alnum "_()=~.")))
+      (zero-or-more space)
+      "=")
      (1 font-lock-variable-name-face))
     )
   "Font lock keywords for enso")
@@ -27,7 +35,7 @@
     ;; Blocks.
     (modify-syntax-entry ?\{ "(}" syntax-table)
     (modify-syntax-entry ?\} "){" syntax-table)
-
+    ;; Parens.
     (modify-syntax-entry ?\( "()" syntax-table)
     (modify-syntax-entry ?\) ")(" syntax-table)
     ;; Lists.
