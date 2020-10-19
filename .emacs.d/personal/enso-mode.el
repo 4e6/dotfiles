@@ -51,7 +51,8 @@
   "Minor mode for editing Enso.
 
 \\{enso-mode-map}"
-  (setq font-lock-defaults '(enso-font-lock-keywords)))
+  (setq font-lock-defaults '(enso-font-lock-keywords))
+  (run-hooks 'enso-mode-hook))
 
 ;;;###autoload
 (add-to-list 'auto-mode-alist '("\\.enso\\'" . enso-mode))
