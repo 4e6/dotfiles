@@ -21,6 +21,7 @@ export XZ_DEFAULTS='-T0'
 export NO_AT_BRIDGE=1
 
 PATH=~/bin:~/.local/bin:~/.local/sbin:$PATH
+[ -f "/home/dbushev/.ghcup/env" ] && source "/home/dbushev/.ghcup/env" # ghcup-env
 
 unset fish_greeting
 #if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
