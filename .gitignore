@@ -33,6 +33,7 @@
 !/.config/fish/
 /.config/fish/*
 !/.config/fish/config.fish
+!/.config/fontconfig/
 !/.config/google-styleguide
 !/.config/i3/
 !/.config/mpv/
