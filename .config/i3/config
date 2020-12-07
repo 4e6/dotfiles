@@ -290,9 +290,9 @@ bar {
 # Autostart
 exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.config/i3/workspace-10.json'"
 
-exec urxvtc -title top -e top
-exec urxvtc -title journalctl -e journalctl -f
-exec urxvtc -title hello
+exec alacritty --title top -e top
+exec alacritty --title journalctl -e journalctl -f
+exec alacritty --title hello
 
 exec systemctl --user start redshift.service
 exec amixer -c 0 sset 'Master' on

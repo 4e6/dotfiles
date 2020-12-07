@@ -9,12 +9,12 @@ alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
 export TERM=xterm
-export TERMINAL=urxvtc
+export TERMINAL=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 export BROWSER=chromium
-export FILE_MANAGER_APP='urxvtc -e ranger'
-export VIDEO_APP='urxvtc -e mpv'
+export FILE_MANAGER_APP='alacritty -e ranger'
+export VIDEO_APP='alacritty -e mpv'
 # parallel xz
 export XZ_DEFAULTS='-T0'
 

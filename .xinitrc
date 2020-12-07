@@ -28,6 +28,5 @@ amixer -c 0 sset 'Dmic1' 100%
 
 # daemons
 xbindkeys
-urxvtd -q -o -f
 
 exec i3

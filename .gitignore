@@ -28,6 +28,7 @@
 
 !/.config/
 /.config/*
+!/.config/alacritty/
 !/.config/base16-shell
 !/.config/fish/
 /.config/fish/*
