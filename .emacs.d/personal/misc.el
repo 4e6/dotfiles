@@ -1,5 +1,5 @@
 (prelude-require-packages
-  '(company-coq memento-mori proof-general transpose-frame prettier-js))
+  '(memento-mori proof-general transpose-frame prettier-js))
 
 (require 'transpose-frame)
 
@@ -33,9 +33,6 @@ reverses order."
 (custom-set-variables
  '(memento-mori-birth-date "1988-03-06")
  '(memento-mori-mode 1))
-
-;; coq
-(add-hook 'coq-mode-hook #'company-coq-mode)
 
 ;; enable prettier-js formatter for file types
 (add-hook 'markdown-mode-hook #'prettier-js-mode)
