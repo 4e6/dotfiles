@@ -14,7 +14,9 @@ dist-newstyle/
 .dir-locals.el
 
 # sbt
+target/
 .sbtopts
+/.bsp/
 /.lib-src/
 /tags
 local.sbt
