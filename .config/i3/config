@@ -297,4 +297,6 @@ exec alacritty --title hello
 exec systemctl --user start redshift.service
 exec amixer -c 0 sset 'Master' on
 
+exec --no-startup-id nm-applet # network-manager-applet
+
 exec i3lock -c 383838
