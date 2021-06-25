@@ -19,6 +19,7 @@
 (require 'prelude-python)
 (require 'prelude-rust)
 (require 'prelude-shell)
+(require 'prelude-ts)
 (require 'prelude-xml)
 (require 'prelude-yaml)
 
