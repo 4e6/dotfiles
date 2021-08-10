@@ -287,6 +287,9 @@ bar {
         }
 }
 
+# App preferences
+#for_window [title="Enso"] floating enable
+
 # Autostart
 exec --no-startup-id "i3-msg 'workspace 10; append_layout /home/dbushev/.config/i3/workspace-10.json'"
 
