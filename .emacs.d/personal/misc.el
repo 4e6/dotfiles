@@ -36,7 +36,7 @@ reverses order."
 
 ;; enable prettier-js formatter for file types
 (add-hook 'markdown-mode-hook #'prettier-js-mode)
-(add-hook 'js2-mode-hook #'prettier-js-mode)
+;(add-hook 'js2-mode-hook #'prettier-js-mode)
 (add-hook 'yaml-mode-hook #'prettier-js-mode)
 
 ;; whitespace-mode settings
