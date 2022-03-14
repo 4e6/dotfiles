@@ -1,5 +1,5 @@
 (prelude-require-packages
-  '(memento-mori proof-general transpose-frame prettier-js))
+  '(memento-mori transpose-frame prettier-js))
 
 (require 'transpose-frame)
 
