@@ -45,6 +45,7 @@
 !/.config/redshift.conf
 !/.config/systemd/
 /.config/systemd/user/*.wants/
+/.config/systemd/user/protonvpn_reconnect.service
 
 !/.local/
 /.local/*
