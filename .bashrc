@@ -20,6 +20,8 @@ export XZ_DEFAULTS='-T0'
 
 export NO_AT_BRIDGE=1
 
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dglass.gtk.uiScale=200% -Dsun.java2d.uiScale=200%'
+
 PATH=~/bin:~/.local/bin:~/.local/sbin:$PATH
 [ -f "/home/dbushev/.ghcup/env" ] && source "/home/dbushev/.ghcup/env" # ghcup-env
 
