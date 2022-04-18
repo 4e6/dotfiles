@@ -1,0 +1,1 @@
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dglass.gtk.uiScale=200% -Dsun.java2d.uiScale=200%'
