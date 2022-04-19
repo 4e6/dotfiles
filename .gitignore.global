@@ -15,10 +15,12 @@ dist-newstyle/
 
 # sbt
 target/
-.sbtopts
+/project
 /.bsp/
 /.lib-src/
 /tags
+/.metals
+/.sbtopts
 local.sbt
 
 # idea
