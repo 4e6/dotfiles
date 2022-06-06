@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+
+usage () {
+  cat << EOF
+Usage:
+  sound_control audio|mic on|off|toggle
+EOF
+}
+
+while [ $# -gt 0 ]; do
+  key="$1"
+  case "$key" in
+    ''|'-h'|'--help')
+      usage
+      exit 0
+      ;;
+    *)
+      break # keep arguments
+      ;;
+  esac
+  shift # past argument
+done
+
+channel="$1"
+case "$channel" in
+  'audio')
+    SOUND_CONTROL_LED='/sys/devices/platform/thinkpad_acpi/leds/platform::mute/brightness'
+    SOUND_CONTROL_CHANNEL='Master'
+    ;;
+  'mic')
+    SOUND_CONTROL_LED='/sys/devices/platform/thinkpad_acpi/leds/platform::micmute/brightness'
+    SOUND_CONTROL_CHANNEL='Capture'
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
+action="$2"
+case "$action" in
+  'on')
+    SOUND_CONTROL_LED_STATE=0
+    ;;
+  'off')
+    SOUND_CONTROL_LED_STATE=1
+    ;;
+  'toggle')
+    if [[ -n "$(amixer sset $SOUND_CONTROL_CHANNEL toggle | grep 'off')" ]]
+    then
+      # channel is muted
+      echo 1 > "$SOUND_CONTROL_LED"
+    else
+      # channel is unmuted
+      echo 0 > "$SOUND_CONTROL_LED"
+    fi
+    exit 0
+    ;;
+  *)
+    usage
+    exit 1
+    ;;
+esac
+
+if [[ -n "$(amixer sset $SOUND_CONTROL_CHANNEL toggle | grep "\[$action\]")" ]]
+then
+  # channel is in the right state
+  echo "$SOUND_CONTROL_LED_STATE" > "$SOUND_CONTROL_LED"
+else
+  # channel is in the wrong state
+  amixer sset $SOUND_CONTROL_CHANNEL toggle 2>&1 > /dev/null
+  echo "$SOUND_CONTROL_LED_STATE" > "$SOUND_CONTROL_LED"
+fi

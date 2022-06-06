@@ -19,9 +19,9 @@
   Control+XF86AudioLowerVolume
 "pactl set-sink-volume @DEFAULT_SINK@ +2%"
   Control+XF86AudioRaiseVolume
-"sound_switch audio"
+"sound_control audio toggle"
   XF86AudioMute
-"sound_switch mic"
+"sound_control mic toggle"
   XF86AudioMicMute
 
 "i3lock -c 383838 && xset dpms force off"

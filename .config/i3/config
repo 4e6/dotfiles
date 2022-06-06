@@ -298,8 +298,10 @@ exec alacritty --title journalctl -e journalctl -f
 exec alacritty --title hello
 
 exec systemctl --user start redshift.service
-exec amixer -c 0 sset 'Master' on
 
 exec --no-startup-id nm-applet # network-manager-applet
+
+exec /home/dbushev/.local/bin/sound_control audio on
+exec /home/dbushev/.local/bin/sound_control mic on
 
 exec i3lock -c 383838
