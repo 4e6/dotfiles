@@ -15,7 +15,15 @@
 ;;  <path-to-build-dir-created-on-previous-step> RET
 ;;  compile_commands.json RET
 (prelude-require-packages
-  '(irony flycheck-irony))
+  '(irony flycheck-irony stickyfunc-enhance))
+
+;; sticky headers http://tuhdo.github.io/c-ide.html#orgheadline41
+(require 'stickyfunc-enhance)
+(add-hook 'c-mode-common-hook
+          (lambda ()
+            (add-to-list 'semantic-default-submodes 'global-semantic-stickyfunc-mode)
+            (semantic-mode 1)
+            (global-semantic-idle-summary-mode 1)))
 
 (require 'irony)
 (add-hook 'c++-mode-hook 'irony-mode)
