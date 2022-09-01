@@ -23,6 +23,7 @@ export NO_AT_BRIDGE=1
 PATH=~/bin:~/.local/bin:~/.local/sbin:$PATH
 [ -f "/home/dbushev/.ghcup/env" ] && source "/home/dbushev/.ghcup/env" # ghcup-env
 [ -d "/home/dbushev/.cargo/bin" ] && PATH=~/.cargo/bin:$PATH #rustup
+[ -f "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh" # nvm
 
 unset fish_greeting
 #if [ -z "$BASH_EXECUTION_STRING" ] && [ -z ${IN_NIX_SHELL+x} ]; then exec fish; fi
