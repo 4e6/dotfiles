@@ -158,9 +158,7 @@ bindsym $mod+r mode "⇱"
 
 mode "🚀" {
         # c, chrome
-        bindsym c exec chromium --force-device-scale-factor=1.5, mode "default"
-        # Shift+c, chrome+tor
-        bindsym Shift+c exec /home/dbushev/bin/chromium-tor, mode "default"
+        bindsym c exec chromium, mode "default"
         # e, emacsclient -c
         bindsym e exec emacsclient -c, mode "default"
 
