@@ -210,6 +210,11 @@ mouse_warping none
 new_float normal
 new_window pixel 1
 hide_edge_borders smart
+# Hide window title bar (deprecated)
+for_window [class="^.*"] border pixel 1
+# Hide window title bar (new way)
+default_border pixel 1
+default_floating_border pixel 1
 
 # Colors
 ## Base16 Zenburn
