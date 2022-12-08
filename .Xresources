@@ -58,6 +58,8 @@ xterm*metaSendsEscape:    true
 xterm*faceName:           Iosevka
 xterm*faceSize:           8
 xterm*cursorColor:        #DCDCCC
+Xcursor.theme:            OpenZone_Ice
+Xcursor.size:             32
 
 ! Emacs
 Emacs.font:               Iosevka-8
