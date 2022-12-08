@@ -6,6 +6,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore.global
+	pager = less -FRX
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
