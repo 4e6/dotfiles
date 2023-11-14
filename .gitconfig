@@ -16,6 +16,9 @@
 	sort = version:refname
 [alias]
 	bb = branch -vv
+	# list branches removed from origin.
+	# usage: git bg | xargs git branch -D
+	bg = "!f() { git branch -vv | grep gone | cut -f3 -d' '; }; f"
 	cc = commit
 	co = checkout
 	ss = status
