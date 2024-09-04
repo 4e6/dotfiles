@@ -20,7 +20,7 @@ butus_off() {
 
 butus_on() {
   systemctl start bluetooth.service
-  bluetoothctl power on
+  bluetoothctl --timeout 1 power on
   blueman-applet > /dev/null 2>&1 &
 }
 
