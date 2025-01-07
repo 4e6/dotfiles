@@ -3,7 +3,9 @@
 usage () {
   cat << EOF
 Usage:
-  usbstick /dev/sdb1
+  usbstick /dev/sda1
+
+Use lsblk to list block devices.
 EOF
 }
 
