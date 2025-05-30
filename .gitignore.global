@@ -26,6 +26,9 @@ local.sbt
 # idea
 /.idea
 
+# zed
+/.zed
+
 # misc
 TAGS
 /logs
