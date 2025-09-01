@@ -33,3 +33,4 @@ local.sbt
 TAGS
 /logs
 /.local/
+.claude/
