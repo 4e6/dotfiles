@@ -1,6 +1,10 @@
 " https://github.com/junegunn/vim-plug
 " :PlugInstall to install plugins.
 
+" Detect macOS so we can pick a platform-specific colorscheme below.
+let s:is_macos = has('mac') || has('macunix')
+      \ || (executable('uname') && system('uname -s') =~? 'darwin')
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
@@ -22,7 +26,7 @@ Plug 'vim-airline/vim-airline-themes'
   let g:airline_left_alt_sep = '|'
   let g:airline_right_sep = ' '
   let g:airline_right_alt_sep = '|'
-  let g:airline_theme= 'zenburn'
+  let g:airline_theme = s:is_macos ? 'nord' : 'zenburn'
 
 Plug 'qpkorr/vim-bufkill'
 
@@ -96,6 +100,7 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
 Plug 'jnurmine/Zenburn'
+Plug 'nordtheme/vim'
 
 " Distraction-free writing in Vim
 Plug 'junegunn/goyo.vim'
@@ -110,4 +115,8 @@ Plug 'junegunn/limelight.vim'
 
 call plug#end()
 
-colorscheme zenburn
+if s:is_macos
+  colorscheme nord
+else
+  colorscheme zenburn
+endif
